@@ -1,0 +1,10 @@
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Modelo\bin\Debug\Modelo.dll.config
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Modelo\bin\Debug\Modelo.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Modelo\bin\Debug\Modelo.pdb
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Modelo\bin\Debug\EntityFramework.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Modelo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Modelo\bin\Debug\EntityFramework.xml
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Modelo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Modelo\obj\Debug\Modelo.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Modelo\obj\Debug\Modelo.pdb

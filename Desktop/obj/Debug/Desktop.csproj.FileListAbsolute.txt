@@ -1,0 +1,15 @@
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\bin\Debug\Desktop.exe.config
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\bin\Debug\Desktop.exe
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\bin\Debug\Desktop.pdb
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\bin\Debug\EntityFramework.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\bin\Debug\Modelo.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\bin\Debug\Modelo.pdb
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\bin\Debug\EntityFramework.xml
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\obj\Debug\Desktop.csprojResolveAssemblyReference.cache
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\obj\Debug\Desktop.Form1.resources
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\obj\Debug\Desktop.Properties.Resources.resources
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\obj\Debug\Desktop.csproj.GenerateResource.Cache
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\obj\Debug\Desktop.exe
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\obj\Debug\Desktop.pdb
