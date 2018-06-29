@@ -42,6 +42,27 @@ namespace WebDulsa
             bundles.Add(new StyleBundle("~/adminlte/css").Include(
                       "~/Content/vendor/font-awesome/font-awesome.min.css",
                       "~/Content/css/adminlte.min.css"));
+
+            bundles.Add(new ScriptBundle("~/login/js").Include(
+                      "~/Content/vendor/jquery/jquery.min.js",
+                      "~/Content/vendor/login/vendor/animsition/js/animsition.min.js",
+                      "~/Content/vendor/login/vendor/bootstrap/js/popper.js",
+                      "~/Content/vendor/login/vendor/bootstrap/js/bootstrap.min.js",
+                      "~/Content/vendor/login/vendor/daterangepicker/moment.min.js",
+                      "~/Content/vendor/login/vendor/daterangepicker/daterangepicker.js",
+                      "~/Content/vendor/login/vendor/countdowntime/countdowntime.js",
+                      "~/Content/vendor/login/js/main.js",
+                      "~/Content/vendor/login/vendor/select2/select2.min.js"));
+            bundles.Add(new StyleBundle("~/login/css").Include(
+                      "~/Content/vendor/login/vendor/bootstrap/css/bootstrap.min.css",
+                      "~/Content/vendor/login/vendor/animate/animate.css",
+                      "~/Content/vendor/login/vendor/css-hamburgers/hamburgers.min.css",
+                      "~/Content/vendor/login/vendor/select2/select2.min.css",
+                      "~/Content/vendor/login/vendor/daterangepicker/daterangepicker.css",
+                      "~/Content/vendor/login/vendor/daterangepicker/daterangepicker.css",
+                      "~/Content/vendor/login/css/util.css",
+                      "~/Content/vendor/login/css/main.css",
+                      "~/Content/vendor/login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css"));
         }
     }
 }

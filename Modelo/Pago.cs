@@ -21,12 +21,12 @@ namespace Modelo
         public string Concepto { get; set; }
 
         [ForeignKey("ClienteId")]
-        public virtual Cliente clientes { get; set; }
+        public virtual Cliente Cliente { get; set; }
         [ForeignKey("EtapaId")]
-        public virtual Etapa Etapas { get; set; }
+        public virtual Etapa Etapa { get; set; }
         [ForeignKey("PrototipoId")]
-        public virtual Prototipo prototipos { get; set; }
+        public virtual Prototipo Prototipo { get; set; }
         [ForeignKey("LoteId")]
-        public virtual Lote lotes { get; set; }
+        public virtual Lote Lote { get; set; }
     }
 }

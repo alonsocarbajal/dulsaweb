@@ -13,3 +13,21 @@ C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\obj\Debug
 C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\obj\Debug\Desktop.csproj.GenerateResource.Cache
 C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\obj\Debug\Desktop.exe
 C:\Users\Alonso\Documents\Visual Studio 2015\Projects\WebDulsa\Desktop\obj\Debug\Desktop.pdb
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\bin\Debug\Desktop.exe.config
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\bin\Debug\Desktop.exe
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\bin\Debug\Desktop.pdb
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\bin\Debug\EntityFramework.dll
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\bin\Debug\EntityFramework.SqlServer.dll
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\bin\Debug\Modelo.dll
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\bin\Debug\Modelo.pdb
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\bin\Debug\Modelo.dll.config
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\bin\Debug\EntityFramework.xml
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\bin\Debug\EntityFramework.SqlServer.xml
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\obj\Debug\Desktop.csprojAssemblyReference.cache
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\obj\Debug\Desktop.Form1.resources
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\obj\Debug\Desktop.Properties.Resources.resources
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\obj\Debug\Desktop.csproj.GenerateResource.cache
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\obj\Debug\Desktop.csproj.CoreCompileInputs.cache
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\obj\Debug\Desktop.csproj.CopyComplete
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\obj\Debug\Desktop.exe
+C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Desktop\obj\Debug\Desktop.pdb
