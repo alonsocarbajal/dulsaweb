@@ -1,0 +1,80 @@
+﻿@model Modelo.Lote
+
+@{
+    ViewBag.Title = "Create";
+}
+@*<img src="~/Content/img/andalucia.png" width="1070" height="336"/>*@
+<img src="~/Content/img/andalucia3.png" class="img-fluid" alt="Responsive image">
+<br />
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <div class="invoice">
+            <br />
+            <br />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group row align-items-center">
+                <div class="col-md-1">
+                </div>
+                @Html.LabelFor(model => model.Manzana, htmlAttributes: new { @class = "control-label col-md-1" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Manzana, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Manzana, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-1">
+                </div>
+                @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-1" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="form-group row align-items-center">
+                <div class="col-md-1">
+                </div>
+                @Html.LabelFor(model => model.M2Terreno, htmlAttributes: new { @class = "control-label col-md-1" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.M2Terreno, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.M2Terreno, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-1">
+                </div>
+                @Html.LabelFor(model => model.ExcedenteM2, "Excedente m2", htmlAttributes: new { @class = "control-label col-md-1" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.ExcedenteM2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ExcedenteM2, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <br>
+            <div class="form-group row align-items-center">
+                <div class="col-md-1">
+                </div>
+                @Html.LabelFor(model => model.Esquina, htmlAttributes: new { @class = "control-label col-md-1" })
+                <div class="col-md-1">
+                    @Html.EditorFor(model => model.Esquina, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Esquina, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+        <br />
+        <br />
+        <div class="form-group row">
+            <div class="ml-auto col-md-3">
+                <input type="submit" value="Guardar" class="btn btn-primary" /> |
+                @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    
+</div>

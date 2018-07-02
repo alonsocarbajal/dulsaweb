@@ -20,3 +20,17 @@ C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Modelo\obj\Debug\Modelo.csproj.
 C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Modelo\obj\Debug\Modelo.csproj.CopyComplete
 C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Modelo\obj\Debug\Modelo.dll
 C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Modelo\obj\Debug\Modelo.pdb
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Debug\Modelo.dll.config
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Debug\Modelo.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Debug\Modelo.pdb
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Debug\EntityFramework.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Debug\EntityFramework.xml
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Debug\es\EntityFramework.resources.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Debug\es\EntityFramework.SqlServer.resources.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Debug\Modelo.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Debug\Modelo.pdb
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Debug\Modelo.csprojAssemblyReference.cache
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Debug\Modelo.csproj.CopyComplete
