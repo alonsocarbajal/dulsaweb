@@ -14,7 +14,7 @@ namespace Modelo
         {
             this.ListaVenta = new HashSet<ListaVenta>();
             this.Pago = new HashSet<Pago>();
-            //this.Lote = new HashSet<Lote>();
+            this.Lote = new HashSet<Lote>();
         }
         
         public int Id { get; set; }
@@ -22,6 +22,6 @@ namespace Modelo
 
         public virtual ICollection<ListaVenta> ListaVenta { get; set; }
         public virtual ICollection<Pago> Pago { get; set; }
-        //public virtual ICollection<Lote> Lote { get; set; }
+        public virtual ICollection<Lote> Lote { get; set; }
     }
 }
