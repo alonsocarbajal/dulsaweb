@@ -18,7 +18,8 @@ namespace Modelo
 
         public int Id { get; set; }
         public string Descripcion { get; set; }
-        public Nullable<decimal> M2 { get; set; }
+        public Nullable<decimal> MetrosCuadrado { get; set; }
+        public Nullable<decimal> Version { get; set; }
 
         public virtual ICollection<ListaVenta> ListaVenta { get; set; }
         public virtual ICollection<Pago> Pago { get; set; }
