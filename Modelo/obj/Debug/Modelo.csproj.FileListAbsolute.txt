@@ -20,3 +20,12 @@ C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Modelo\obj\Debug\Modelo.csproj.
 C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Modelo\obj\Debug\Modelo.csproj.CopyComplete
 C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Modelo\obj\Debug\Modelo.dll
 C:\desarrollo\proyectos\self\dulsa-web\dulsawebn\Modelo\obj\Debug\Modelo.pdb
+C:\self\git\dulsaweb-new\Modelo\bin\Debug\Modelo.dll.config
+C:\self\git\dulsaweb-new\Modelo\bin\Debug\Modelo.dll
+C:\self\git\dulsaweb-new\Modelo\bin\Debug\Modelo.pdb
+C:\self\git\dulsaweb-new\Modelo\bin\Debug\EntityFramework.dll
+C:\self\git\dulsaweb-new\Modelo\bin\Debug\EntityFramework.SqlServer.dll
+C:\self\git\dulsaweb-new\Modelo\bin\Debug\EntityFramework.xml
+C:\self\git\dulsaweb-new\Modelo\bin\Debug\EntityFramework.SqlServer.xml
+C:\self\git\dulsaweb-new\Modelo\obj\Debug\Modelo.dll
+C:\self\git\dulsaweb-new\Modelo\obj\Debug\Modelo.pdb
