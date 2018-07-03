@@ -31,6 +31,7 @@ namespace Modelo
         public string TelefonoOficina { get; set; }
         public string Email { get; set; }
         public string Empresa { get; set; }
+        public int Cambio { get; set; }
         public Nullable<Decimal> Sueldo { get; set; }
         public string Beneficiario { get; set; }
 
