@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Modelo.Prototipo>
+﻿@model IEnumerable<Modelo.Lote>
 
 @{
     ViewBag.Title = "Index";
@@ -16,10 +16,16 @@
                 @Html.DisplayNameFor(model => model.Descripcion)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MetrosCuadrado)
+                @Html.DisplayNameFor(model => model.Manzana)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Version)
+                @Html.DisplayNameFor(model => model.M2Terreno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExcedenteM2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Esquina)
             </th>
             <th></th>
         </tr>
@@ -32,10 +38,16 @@
                     @Html.DisplayFor(modelItem => item.Descripcion)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.MetrosCuadrado)
+                    @Html.DisplayFor(modelItem => item.Manzana)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Version)
+                    @Html.DisplayFor(modelItem => item.M2Terreno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExcedenteM2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Esquina)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

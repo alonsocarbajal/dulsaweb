@@ -16,18 +16,13 @@ namespace Modelo
         }
 
         public int Id { get; set; }
-        public int Descripcion { get; set; }
+        public string Descripcion { get; set; }
         public int Manzana { get; set; }
-        public int EtapaId { get; set; }
-        public Nullable<decimal> M2 { get; set; }
-        public Nullable<decimal> M2Excedente { get; set; }
-        public Nullable<decimal> ImporteExcedente { get; set; }
-        public Nullable<decimal> Esquina { get; set; }
-        public Nullable<decimal> ImporteTotal { get; set; }
-        public char Estatus { get; set; }
-
-        [ForeignKey("EtapaId")]
-        public virtual Etapa Etapas { get; set; }
+        public Nullable<decimal> M2Terreno { get; set; }
+        public Nullable<decimal> ExcedenteM2 { get; set; }
+        public Boolean Esquina { get; set; }
+        
+        
         public virtual ICollection<Pago> Pago { get; set; }
 
     }

@@ -38,6 +38,7 @@ namespace WebDulsa.Controllers
         // GET: Prototipos/Create
         public ActionResult Create()
         {
+            ViewBag.MisPrototipos = ObtenerPrototipos();
             return View();
         }
 
@@ -122,6 +123,39 @@ namespace WebDulsa.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public List<SelectListItem> ObtenerPrototipos()
+        {
+            return new List<SelectListItem>()
+            {
+                new SelectListItem()
+                {
+                    Text="AZALEA",
+                    Value="AZALEA"
+                },
+                new SelectListItem()
+                {
+                    Text="BUGAMBILIA",
+                    Value="BUGAMBILIA"
+                },
+                new SelectListItem()
+                {
+                    Text="DALIA",
+                    Value="DALIA"
+                },
+                new SelectListItem()
+                {
+                    Text="IRIS",
+                    Value="IRIS"
+                },
+                new SelectListItem()
+                {
+                    Text="ORQUIDEA",
+                    Value="ORQUIDEA"
+                }
+
+            };
         }
     }
 }
