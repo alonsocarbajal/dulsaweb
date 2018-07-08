@@ -35,11 +35,15 @@ namespace WebDulsa
                       "~/Scripts/Prototipos/prototipos.js"));
             bundles.Add(new ScriptBundle("~/clientes/js").Include(
                       "~/Scripts/Clientes/cliente.js"));
+            bundles.Add(new ScriptBundle("~/etapas/js").Include(
+                      "~/Scripts/Etapas/etapa.js"));
             bundles.Add(new ScriptBundle("~/adminlte/js").Include(
                       "~/Content/vendor/jquery/jquery.min.js",
                       "~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js",
                       "~/Content/js/adminlte.js",
                       "~/Content/js/demo.js",
+                      "~/Content/js/waitMe.js",
+                      "~/Content/js/loading.js",
                       "~/Content/js/pages/dashboard3.js"));
 
             bundles.Add(new StyleBundle("~/adminlte/css").Include(

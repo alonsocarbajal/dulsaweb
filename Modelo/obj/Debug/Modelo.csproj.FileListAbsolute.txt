@@ -41,3 +41,15 @@ C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Debug\
 C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Debug\Modelo.dll
 C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Debug\Modelo.pdb
 C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Debug\Modelo.csprojAssemblyReference.cache
+C:\self\git\dulsaweb\Modelo\bin\Debug\Modelo.dll.config
+C:\self\git\dulsaweb\Modelo\bin\Debug\Modelo.dll
+C:\self\git\dulsaweb\Modelo\bin\Debug\Modelo.pdb
+C:\self\git\dulsaweb\Modelo\bin\Debug\EntityFramework.dll
+C:\self\git\dulsaweb\Modelo\bin\Debug\EntityFramework.SqlServer.dll
+C:\self\git\dulsaweb\Modelo\bin\Debug\EntityFramework.xml
+C:\self\git\dulsaweb\Modelo\bin\Debug\EntityFramework.SqlServer.xml
+C:\self\git\dulsaweb\Modelo\obj\Debug\Modelo.csprojAssemblyReference.cache
+C:\self\git\dulsaweb\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\self\git\dulsaweb\Modelo\obj\Debug\Modelo.csproj.CopyComplete
+C:\self\git\dulsaweb\Modelo\obj\Debug\Modelo.dll
+C:\self\git\dulsaweb\Modelo\obj\Debug\Modelo.pdb

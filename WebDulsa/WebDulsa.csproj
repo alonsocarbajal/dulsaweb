@@ -252,6 +252,7 @@
     <Content Include="Content\js\adminlte.js" />
     <Content Include="Content\js\adminlte.min.js" />
     <Content Include="Content\js\demo.js" />
+    <Content Include="Content\js\loading.js" />
     <Content Include="Content\js\pages\dashboard.js" />
     <Content Include="Content\js\pages\dashboard2.js" />
     <Content Include="Content\js\pages\dashboard3.js" />
@@ -365,6 +366,10 @@
     <Content Include="Content\js\plugins\popper\umd\popper-utils.min.js" />
     <Content Include="Content\js\plugins\popper\umd\popper.js" />
     <Content Include="Content\js\plugins\popper\umd\popper.min.js" />
+    <Content Include="Content\js\waitMe.css" />
+    <Content Include="Content\js\waitMe.js" />
+    <Content Include="Content\js\waitMe.min.css" />
+    <Content Include="Content\js\waitMe.min.js" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css" />
@@ -652,6 +657,7 @@
     <Content Include="Scripts\dashboard.js" />
     <Content Include="Scripts\daterangepicker.js" />
     <Content Include="Scripts\demo.js" />
+    <Content Include="Scripts\Etapas\etapa.js" />
     <Content Include="Scripts\fastclick.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

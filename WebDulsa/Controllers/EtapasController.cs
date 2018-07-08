@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Modelo;
+using Newtonsoft.Json;
 
 namespace WebDulsa.Controllers
 {
@@ -17,7 +18,32 @@ namespace WebDulsa.Controllers
         // GET: Etapas
         public ActionResult Index()
         {
+            //var lista = new List<int>();
+            //lista.Add(1);
+            //lista.Add(2);
+            //lista.Add(7);
+            //lista.Add(10);
+            ////db.Etapas.
+            //var etapa = new Etapa()
+            //{
+            //    Descripcion = "Etapa 1",
+            //    Lotes = JsonConvert.SerializeObject(lista)
+            //};
+            //db.Etapas.Add(etapa);
+            //db.SaveChanges();
             return View(db.Etapas.ToList());
+        }
+
+        public JsonResult GetLotesDisponibles()
+        {
+            IEnumerable<int> lotesDisponibles = new List<int>();
+            ICollection<string> disponibles = db.Etapas.Select(e => e.Lotes).ToList();
+            foreach(var disponible in disponibles)
+            {
+                ICollection<int> lotesDisp= JsonConvert.DeserializeObject<ICollection<int>>(disponible);
+                lotesDisponibles= lotesDisponibles.Concat(lotesDisp);
+            }
+            return Json(lotesDisponibles, JsonRequestBehavior.AllowGet);
         }
 
         // GET: Etapas/Details/5
