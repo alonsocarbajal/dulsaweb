@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="~/Content/vendor/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
     @Styles.Render("~/adminlte/css")
+    @Scripts.Render("~/adminlte/js")
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -51,8 +52,8 @@
         </div>
         @Html.Partial("_PiePagina")
     </div>
-    @Scripts.Render("~/adminlte/js")
-    @Scripts.Render("~/prototipos/js")
+    
+    
     @Scripts.Render("~/clientes/js")
     @Scripts.Render("~/etapas/js")
     @RenderSection("scripts", required: false)
