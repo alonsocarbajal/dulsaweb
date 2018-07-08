@@ -42,12 +42,14 @@ namespace WebDulsa
                       "~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js",
                       "~/Content/js/adminlte.js",
                       "~/Content/js/demo.js",
-                      "~/Content/js/waitMe.js",
+                      "~/Content/js/waitMe.min.js",
+                      "~/Content/js/jquery.maskMoney.min.js",
                       "~/Content/js/loading.js",
                       "~/Content/js/pages/dashboard3.js"));
 
             bundles.Add(new StyleBundle("~/adminlte/css").Include(
                       "~/Content/vendor/font-awesome/font-awesome.min.css",
+                      "~/Content/js/waitMe.min.css",
                       "~/Content/css/adminlte.min.css"));
 
             bundles.Add(new ScriptBundle("~/login/js").Include(

@@ -1,5 +1,4 @@
 ﻿function show() {
-    console.log('asassa');
     $('body').waitMe({
         effect: 'rotation',
         text: '',

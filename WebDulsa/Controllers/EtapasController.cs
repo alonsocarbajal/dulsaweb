@@ -72,10 +72,18 @@ namespace WebDulsa.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Descripcion,Lote1,Lote2,Lote3,Lote4,Lote5,Lote6,Lote7,Lote8,Lote9,Lote10,Lote11,Lote12,Lote13,Lote14,Lote15,Lote16,Lote17,Lote18,Lote19,Lote20,Lote21,Lote22,Lote23,Lote24,Dalia,Azalea,Iris,Orquidea,Bugambilia,PrecioM2Excedente,MontoEsquina")] Etapa etapa)
+        public ActionResult Create([Bind(Include = "Id,Descripcion,Lotes,Dalia,Azalea,Iris,Orquidea,Bugambilia,PrecioM2Excedente,MontoEsquina")] Etapa etapa)
         {
             if (ModelState.IsValid)
             {
+                if (etapa.Lotes.Length > 0)
+                {
+                    ICollection<int> lotesDisp = new List<int>();
+                    var stringLotes = etapa.Lotes.Split(',');
+                    foreach (var lote in stringLotes)
+                        lotesDisp.Add(int.Parse(lote));
+                    etapa.Lotes = JsonConvert.SerializeObject(lotesDisp);
+                }
                 db.Etapas.Add(etapa);
                 db.SaveChanges();
                 return RedirectToAction("Index");

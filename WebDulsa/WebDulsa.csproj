@@ -252,6 +252,7 @@
     <Content Include="Content\js\adminlte.js" />
     <Content Include="Content\js\adminlte.min.js" />
     <Content Include="Content\js\demo.js" />
+    <Content Include="Content\js\jquery.maskMoney.min.js" />
     <Content Include="Content\js\loading.js" />
     <Content Include="Content\js\pages\dashboard.js" />
     <Content Include="Content\js\pages\dashboard2.js" />
