@@ -1,0 +1,200 @@
+﻿@model Modelo.Pago
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Pago</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Asesor.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asesor.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lote.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lote.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prototipo.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prototipo.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MontoApartado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MontoApartado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credito)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credito)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Banco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Banco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vigencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vigencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MontoEnganche)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MontoEnganche)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pago1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pago1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImportePago1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImportePago1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pago2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pago2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImportePago2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImportePago2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pago3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pago3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImportePago3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImportePago3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pago4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pago4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImportePago4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImportePago4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pago5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pago5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImportePago5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImportePago5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cambios)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cambios)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observaciones)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -31,7 +31,10 @@ namespace WebDulsa
             // preparado para la producción y podrá utilizar la herramienta de compilación disponible en http://modernizr.com para seleccionar solo las pruebas que necesite.
             //bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
             //            "~/Scripts/modernizr-*"));
-
+            bundles.Add(new ScriptBundle("~/prototipos/js").Include(
+                      "~/Scripts/Prototipos/prototipos.js"));
+            bundles.Add(new ScriptBundle("~/clientes/js").Include(
+                      "~/Scripts/Clientes/cliente.js"));
             bundles.Add(new ScriptBundle("~/adminlte/js").Include(
                       "~/Content/vendor/jquery/jquery.min.js",
                       "~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js",

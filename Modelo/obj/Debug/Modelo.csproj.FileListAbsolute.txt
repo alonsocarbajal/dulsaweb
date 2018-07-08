@@ -40,3 +40,4 @@ C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Debug\
 C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Debug\Modelo.csproj.CopyComplete
 C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Debug\Modelo.dll
 C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Debug\Modelo.pdb
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Debug\Modelo.csprojAssemblyReference.cache

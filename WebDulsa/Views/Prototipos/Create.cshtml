@@ -5,62 +5,69 @@
 }
 @*<img src="~/Content/img/andalucia3.png" />*@
 <br />
-<br />
+
 @*<h2>Create</h2>*@
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-<div class="invoice p-3 mb-3">
-    @*<h4>Prototipo</h4>
-        <hr />*@
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group row align-items-center">
-        <div class="col-md-1">
+    <div class="invoice p-3 mb-3">
+        <br />
+        @*<h4>Prototipo</h4>
+            <hr />*@
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group row align-items-end">
+            <div class="col-md-1">
+            </div>
+            @Html.LabelFor(model => model.Descripcion, "Prototipo", htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-3">
+                @Html.DropDownList("Descripcion", (List<SelectListItem>)ViewBag.MisPrototipos, "---", htmlAttributes: new { @class = "form-control" })
+                @*@Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-1">
+            </div>
+                <div class="col-md-2" id="dato-prototipo" >
+                    <label class="control-label">Ultima Versión:</label>
+                </div>
+                <div class="col-md-1">
+                    <input class="form-control" id="version" readonly type="text" />
+                </div>
+            
+            @*<div class="col-md-3" id="dato-prototipo" style="display:none">
+            <label class="control-label">Ultima Versión:</label>
+            <input class="form-control" id="version" readonly type="text" />
+        </div>*@
         </div>
-        @Html.LabelFor(model => model.Descripcion, "Prototipo", htmlAttributes: new { @class = "control-label col-md-1" })
-        <div class="col-md-3">
-            @Html.DropDownList("Descripcion", (List<SelectListItem>)ViewBag.MisPrototipos, htmlAttributes: new { @class = "form-control" })
-            @*@Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })*@
-            @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+        <br />
+        <br />
+        <div class="form-group row align-items-end">
+            <div class="col-md-1">
+            </div>
+            @Html.LabelFor(model => model.Version, "Versión", htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.Version, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Version, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-1">
+            </div>
+            @Html.LabelFor(model => model.MetrosCuadrado, "M2", htmlAttributes: new { @class = "control-label col-md-1 text-right" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.MetrosCuadrado, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MetrosCuadrado, "", new { @class = "text-danger" })
+            </div>
         </div>
-        <div class="col-md-1">
-        </div>
-        Ultima Versión
-        <div class="col-md-3">
-
+        <br />
+        <br />
+        <div class="form-group">
+            <div class="ml-auto col-md-2">
+                <input type="submit" value="Guardar" class="btn btn-primary" /> |
+                @Html.ActionLink("Atras", "Index", null, new { @class = "btn btn-default" })
+            </div>
         </div>
     </div>
-    <br />
-    <br />
-    <div class="form-group row align-items-center">
-        <div class="col-md-1">
-        </div>
-        @Html.LabelFor(model => model.Version, "Versión", htmlAttributes: new { @class = "control-label col-md-1" })
-        <div class="col-md-3">
-            @Html.EditorFor(model => model.Version, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Version, "", new { @class = "text-danger" })
-        </div>
-        <div class="col-md-1">
-        </div>
-        @Html.LabelFor(model => model.MetrosCuadrado, "M2", htmlAttributes: new { @class = "control-label col-md-1" })
-        <div class="col-md-3">
-            @Html.EditorFor(model => model.MetrosCuadrado, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.MetrosCuadrado, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <br />
-    <br />
-<div class="form-group">
-        <div class="ml-auto col-md-2">
-            <input type="submit" value="Guardar" class="btn btn-primary" /> |
-            @Html.ActionLink("Atras", "Index", null, new { @class = "btn btn-default" })
-        </div>
-    </div>
-</div>
 }
-
 @*<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>*@
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@

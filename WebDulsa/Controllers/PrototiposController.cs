@@ -157,5 +157,16 @@ namespace WebDulsa.Controllers
 
             };
         }
+
+        [HttpGet]
+        public JsonResult GetPrototipo(string Descripcion)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var prototipo = db.Prototipos.Where(p=>p.Descripcion.Equals(Descripcion)).OrderByDescending(p=>p.Version).FirstOrDefault();
+            if (prototipo == null)
+                return Json("No Existe");
+            else
+                return Json(prototipo, JsonRequestBehavior.AllowGet);
+        }
     }
 }

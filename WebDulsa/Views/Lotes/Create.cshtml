@@ -3,9 +3,9 @@
 @{
     ViewBag.Title = "Create";
 }
-<img src="~/Content/img/andalucia3.png" />
+@*<img src="~/Content/img/andalucia3.png" />*@
 <br />
-<br />
+
 
 @*<h2>Create</h2>*@
 
@@ -16,7 +16,7 @@
     <div class="invoice p-3 mb-3">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group row align-items-center">
+        <div class="form-group row align-items-end">
             <div class="col-md-1">
             </div>
             @Html.LabelFor(model => model.Manzana, htmlAttributes: new { @class = "control-label col-md-1" })
@@ -34,7 +34,7 @@
         </div>
         <br />
         <br />
-        <div class="form-group row align-items-center">
+        <div class="form-group row align-items-end">
             <div class="col-md-1">
             </div>
             @Html.LabelFor(model => model.M2Terreno, htmlAttributes: new { @class = "control-label col-md-1" })
@@ -42,10 +42,10 @@
                 @Html.EditorFor(model => model.M2Terreno, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.M2Terreno, "", new { @class = "text-danger" })
             </div>
-            <div class="col-md-1">
-            </div>
-            @Html.LabelFor(model => model.ExcedenteM2, "Excedente m2:", htmlAttributes: new { @class = "control-label col-md-1" })
-            <div class="col-md-3">
+            @*<div class="col-md-1">
+            </div>*@
+            @Html.LabelFor(model => model.ExcedenteM2, "Excedente M2", htmlAttributes: new { @class = "control-label col-md-2 text-right" })
+            <div class="col-md-2">
                 @Html.EditorFor(model => model.ExcedenteM2, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ExcedenteM2, "", new { @class = "text-danger" })
             </div>
