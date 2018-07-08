@@ -198,8 +198,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AsesorsController.cs" />
+    <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\EtapasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LotesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PagoesController.cs" />
     <Compile Include="Controllers\PrototiposController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -214,6 +218,7 @@
     <Content Include="Content\css\adminlte.css" />
     <Content Include="Content\css\adminlte.min.css" />
     <Content Include="Content\img\AdminLTELogo.png" />
+    <Content Include="Content\img\andalucia3.png" />
     <Content Include="Content\img\avatar.png" />
     <Content Include="Content\img\avatar04.png" />
     <Content Include="Content\img\avatar2.png" />
@@ -643,6 +648,7 @@
     <Content Include="Content\vendor\login\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Content\vendor\login\vendor\bootstrap\css\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Clientes\cliente.js" />
     <Content Include="Scripts\dashboard.js" />
     <Content Include="Scripts\daterangepicker.js" />
     <Content Include="Scripts\demo.js" />
@@ -660,6 +666,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Prototipos\prototipos.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -711,6 +718,26 @@
     <Content Include="Views\Prototipos\Details.cshtml" />
     <Content Include="Views\Prototipos\Edit.cshtml" />
     <Content Include="Views\Prototipos\Index.cshtml" />
+    <Content Include="Views\Lotes\Create.cshtml" />
+    <Content Include="Views\Lotes\Delete.cshtml" />
+    <Content Include="Views\Lotes\Details.cshtml" />
+    <Content Include="Views\Lotes\Edit.cshtml" />
+    <Content Include="Views\Lotes\Index.cshtml" />
+    <Content Include="Views\Clientes\Create.cshtml" />
+    <Content Include="Views\Clientes\Delete.cshtml" />
+    <Content Include="Views\Clientes\Details.cshtml" />
+    <Content Include="Views\Clientes\Edit.cshtml" />
+    <Content Include="Views\Clientes\Index.cshtml" />
+    <Content Include="Views\Etapas\Create.cshtml" />
+    <Content Include="Views\Etapas\Delete.cshtml" />
+    <Content Include="Views\Etapas\Details.cshtml" />
+    <Content Include="Views\Etapas\Edit.cshtml" />
+    <Content Include="Views\Etapas\Index.cshtml" />
+    <Content Include="Views\Pagoes\Create.cshtml" />
+    <Content Include="Views\Pagoes\Delete.cshtml" />
+    <Content Include="Views\Pagoes\Details.cshtml" />
+    <Content Include="Views\Pagoes\Edit.cshtml" />
+    <Content Include="Views\Pagoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
