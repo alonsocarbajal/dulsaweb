@@ -10,210 +10,69 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote4)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote5)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote6)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote7)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote8)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote9)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote10)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote11)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote12)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote13)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote14)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote15)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote16)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote17)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote18)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote19)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote20)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote21)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote22)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote23)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lote24)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Dalia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Azalea)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Iris)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Orquidea)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Bugambilia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PrecioM2Excedente)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MontoEsquina)
-        </th>
-        <th></th>
-    </tr>
-
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dalia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Azalea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Iris)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orquidea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bugambilia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioM2Excedente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MontoEsquina)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote4)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote5)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote6)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote7)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote8)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote9)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote10)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote11)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote12)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote13)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote14)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote15)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote16)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote17)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote18)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote19)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote20)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote21)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote22)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote23)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lote24)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Dalia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Azalea)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Iris)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Orquidea)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Bugambilia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PrecioM2Excedente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MontoEsquina)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
 
+            <td>
+                @Html.DisplayFor(modelItem => item.Dalia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Azalea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iris)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Orquidea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bugambilia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioM2Excedente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MontoEsquina)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+        }
+    </tbody>
 </table>

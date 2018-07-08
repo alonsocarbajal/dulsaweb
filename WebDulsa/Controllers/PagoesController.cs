@@ -13,7 +13,6 @@ namespace WebDulsa.Controllers
     public class PagoesController : Controller
     {
         private Contexto db = new Contexto();
-
         // GET: Pagoes
         public ActionResult Index()
         {
