@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -18,41 +19,23 @@ namespace Modelo
         }
         
         public int Id { get; set; }
-        public int Descripcion { get; set; }
-        public Boolean Lote1 { get; set; }
-        public Boolean Lote2 { get; set; }
-        public Boolean Lote3 { get; set; }
-        public Boolean Lote4 { get; set; }
-        public Boolean Lote5 { get; set; }
-        public Boolean Lote6 { get; set; }
-        public Boolean Lote7 { get; set; }
-        public Boolean Lote8 { get; set; }
-        public Boolean Lote9 { get; set; }
-        public Boolean Lote10 { get; set; }
-        public Boolean Lote11 { get; set; }
-        public Boolean Lote12 { get; set; }
-        public Boolean Lote13 { get; set; }
-        public Boolean Lote14 { get; set; }
-        public Boolean Lote15 { get; set; }
-        public Boolean Lote16 { get; set; }
-        public Boolean Lote17 { get; set; }
-        public Boolean Lote18 { get; set; }
-        public Boolean Lote19 { get; set; }
-        public Boolean Lote20 { get; set; }
-        public Boolean Lote21 { get; set; }
-        public Boolean Lote22 { get; set; }
-        public Boolean Lote23 { get; set; }
-        public Boolean Lote24 { get; set; }
-        public Nullable<decimal> Dalia { get; set; }
-        public Nullable<decimal> Azalea { get; set; }
-        public Nullable<decimal> Iris { get; set; }
-        public Nullable<decimal> Orquidea { get; set; }
-        public Nullable<decimal> Bugambilia { get; set; }
-        public Nullable<decimal> PrecioM2Excedente { get; set; }
-        public Nullable<decimal> MontoEsquina { get; set; }
+        [Required(ErrorMessage ="La etapa es requerida")]
+        public string Descripcion { get; set; }
+        public string Lotes { get; set; }
+        [Range(1, double.MaxValue, ErrorMessage = "Introduzca un valor valido")]
+        public decimal Dalia { get; set; }
+        [Range(1, double.MaxValue, ErrorMessage = "Introduzca un valor valido")]
+        public decimal Azalea { get; set; }
+        [Range(1, double.MaxValue, ErrorMessage = "Introduzca un valor valido")]
+        public decimal Iris { get; set; }
 
-        //public virtual ICollection<ListaVenta> ListaVenta { get; set; }
-        //public virtual ICollection<Pago> Pago { get; set; }
-        //public virtual ICollection<Lote> Lote { get; set; }
+        [Range(1, double.MaxValue, ErrorMessage = "Introduzca un valor valido")]
+        public decimal Orquidea { get; set; }
+        [Range(1, double.MaxValue, ErrorMessage = "Introduzca un valor valido")]
+        public decimal Bugambilia { get; set; }
+        [Range(1, double.MaxValue, ErrorMessage = "Introduzca un valor valido")]
+        public decimal PrecioM2Excedente { get; set; }
+        [Range(1, double.MaxValue, ErrorMessage = "Introduzca un valor valido")]
+        public decimal MontoEsquina { get; set; }
     }
 }
