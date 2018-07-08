@@ -10,7 +10,7 @@ using Modelo;
 
 namespace WebDulsa.Controllers
 {
-    public class AsesorsController : Controller
+    public class AsesoresController : Controller
     {
         private Contexto db = new Contexto();
 

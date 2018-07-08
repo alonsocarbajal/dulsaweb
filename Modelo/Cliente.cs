@@ -18,6 +18,7 @@ namespace Modelo
         }
 
         public int Id { get; set; }
+        [Required]
         public string Nombre { get; set; }
         public string Regimen { get; set; }
         public string Nacionalidad { get; set; }
@@ -25,8 +26,11 @@ namespace Modelo
         public string Colonia { get; set; }
         public string Calle { get; set; }
         public string Numero { get; set; }
+        [Display(Description ="Tel Casa")]
         public string TelefonoCasa { get; set; }
+        [Display(Description = "Tel Cel")]
         public string TelefonoCelular { get; set; }
+        [Display(Description = "Tel Oficina")]
         public string TelefonoOficina { get; set; }
         public string Email { get; set; }
         public string Rfc { get; set; }
@@ -36,6 +40,7 @@ namespace Modelo
         public string Empresa { get; set; }
         public Nullable<Decimal> Sueldo { get; set; }
         public string Beneficiario { get; set; }
+        [Required]
         public string AqueSeDedica { get; set; }
         public string EstadoCivil { get; set; }
         public string Sexo { get; set; }

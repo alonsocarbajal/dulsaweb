@@ -13,4 +13,8 @@
         //}
     });
 
+    
+        $("#datepicker").datepicker();
+   
+
 });

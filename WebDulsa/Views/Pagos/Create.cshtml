@@ -21,9 +21,9 @@
         <div class="form-group row align-items-end">
             <div class="col-md-1">
             </div>
-            @Html.LabelFor(model => model.ClienteId, "Cliente:", htmlAttributes: new { @class = "control-label col-md-1" })
+            @Html.LabelFor(model => model.ClienteId, "Cliente:", htmlAttributes: new { @class = "control-label col-md-1"})
             <div class="col-md-7">
-                @Html.DropDownList("ClienteId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("ClienteId", null,"-- Seleccione un cliente --", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -33,7 +33,7 @@
             </div>
             @Html.LabelFor(model => model.Fecha, "Fecha:", htmlAttributes: new { @class = "control-label col-md-1" })
             <div class="col-md-3">
-                @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                 @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -43,7 +43,7 @@
             </div>
             @Html.LabelFor(model => model.LoteId, "Lote:", htmlAttributes: new { @class = "control-label col-md-1" })
             <div class="col-md-3">
-                @Html.DropDownList("LoteId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("LoteId", null,"-- Seleccione un lote --", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.LoteId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -53,7 +53,7 @@
             </div>
             @Html.LabelFor(model => model.PrototipoId, "Prototipo:", htmlAttributes: new { @class = "control-label col-md-1" })
             <div class="col-md-3">
-                @Html.DropDownList("PrototipoId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("PrototipoId", null,"Seleccione un prototipo", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.PrototipoId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -82,7 +82,8 @@
             </div>
             @Html.LabelFor(model => model.Banco, "Banco:", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-3">
-                @Html.EditorFor(model => model.Banco, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("Banco", (List<SelectListItem>)ViewBag.MiBanco, htmlAttributes: new { @class = "form-control" })
+                @*@Html.EditorFor(model => model.Banco, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.Banco, "", new { @class = "text-danger" })
             </div>
             @Html.LabelFor(model => model.Vigencia, "Vigencia:", htmlAttributes: new { @class = "control-label col-md-1" })
@@ -204,7 +205,7 @@
 
     <div class="form-group">
         <div class="ml-auto col-md-3">
-            <input type="submit" value="Guardar" class="btn btn-primary" /> |
+            <input type="submit" value="Guardar" class="btn btn-primary" /> &nbsp;
             @Html.ActionLink("Atras", "Index", null, new { @class = "btn btn-default" })
         </div>
     </div>
