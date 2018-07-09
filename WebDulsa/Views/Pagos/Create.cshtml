@@ -28,35 +28,39 @@
             </div>
         </div>
         <br />
-        <div class="form-group row align-items-end">
-            <div class="col-md-1">
+        
+        
+
+            <div class="form-group row align-items-end">
+                <div class="col-md-1">
+                </div>
+                @Html.LabelFor(model => model.Fecha, "Fecha:", htmlAttributes: new { @class = "control-label col-md-1" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                    @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
+                </div>
             </div>
-            @Html.LabelFor(model => model.Fecha, "Fecha:", htmlAttributes: new { @class = "control-label col-md-1" })
-            <div class="col-md-3">
-                @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
-                @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
+            <br />
+            <div class="form-group row align-items-end">
+                <div class="col-md-1">
+                </div>
+                @Html.LabelFor(model => model.LoteId, "Lote:", htmlAttributes: new { @class = "control-label col-md-1" })
+                <div class="col-md-3">
+                    @Html.DropDownList("LoteId", null, "-- Seleccione un lote --", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.LoteId, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
-        <br />
-        <div class="form-group row align-items-end">
-            <div class="col-md-1">
+            <br />
+            <div class="form-group row align-items-end">
+                <div class="col-md-1">
+                </div>
+                @Html.LabelFor(model => model.PrototipoId, "Prototipo:", htmlAttributes: new { @class = "control-label col-md-1" })
+                <div class="col-md-3">
+                    @Html.DropDownList("PrototipoId", null, "Seleccione un prototipo", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.PrototipoId, "", new { @class = "text-danger" })
+                </div>
             </div>
-            @Html.LabelFor(model => model.LoteId, "Lote:", htmlAttributes: new { @class = "control-label col-md-1" })
-            <div class="col-md-3">
-                @Html.DropDownList("LoteId", null,"-- Seleccione un lote --", htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.LoteId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <br />
-        <div class="form-group row align-items-end">
-            <div class="col-md-1">
-            </div>
-            @Html.LabelFor(model => model.PrototipoId, "Prototipo:", htmlAttributes: new { @class = "control-label col-md-1" })
-            <div class="col-md-3">
-                @Html.DropDownList("PrototipoId", null,"Seleccione un prototipo", htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.PrototipoId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        
     </div>
 
     <div class="invoice p-3 mb-3">

@@ -16,5 +16,7 @@
     
         $("#datepicker").datepicker();
    
-
+    $(".currency").maskMoney({
+        formatOnBlur: true, selectAllOnFocus: false, selectAllOnFocus: true, reverse: true, prefix: '$'
+    });
 });
