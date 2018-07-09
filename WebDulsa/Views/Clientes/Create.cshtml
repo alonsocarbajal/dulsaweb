@@ -10,6 +10,7 @@
 {
     @Html.AntiForgeryToken()
 
+<<<<<<< HEAD
     <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -120,6 +121,136 @@
                 </div>
             </div>
         </div>
+=======
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="invoice p-3 mb-3">
+
+        <div class="form-group row align-items-center">
+            <div class="col-md-1">
+            </div>
+            @Html.LabelFor(model => model.AqueSeDedica, "A qué se dedica:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.RadioButtonFor(Model => Model.AqueSeDedica, "Negocio propio", new { @class = "dedica", id = "Negocio" })
+                Negocio propio
+            </div>
+            <div class="col-md-3">
+                @Html.RadioButtonFor(Model => Model.AqueSeDedica, "Empleado", new { @class = "dedica", id = "Empleado" })
+                Empleado
+                @*@Html.EditorFor(model => model.AqueSeDedica, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.AqueSeDedica, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-1">
+            </div>
+            @Html.LabelFor(model => model.EstadoCivil, "Estado civil:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.RadioButtonFor(Model => Model.EstadoCivil, "Casado", new { @class = "Ecivil", id = "Casado" })
+                Casado
+            </div>
+            <div class="col-md-2">
+                @Html.RadioButtonFor(Model => Model.EstadoCivil, "Soltero", new { @class = "Ecivil", id = "Soltero" })
+                Soltero
+                @*@Html.EditorFor(model => model.EstadoCivil, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.EstadoCivil, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-1 align-items-center">
+                |
+            </div>
+            @Html.LabelFor(model => model.Sexo, "Sexo:", htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-1">
+                @Html.RadioButtonFor(Model => Model.Sexo, "H", new { @class = "Sexo", id = "H" })
+                H
+            </div>
+            <div class="col-md-1">
+                @Html.RadioButtonFor(Model => Model.Sexo, "M", new { @class = "Sexo", id = "M" })
+                M
+                @*@Html.EditorFor(model => model.Sexo, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+        <div class="form-group row">
+            <div class="col-1">
+            </div>
+            @Html.LabelFor(model => model.PropositoCompra, "Proposito de compra:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-1">
+                @Html.RadioButtonFor(Model => Model.PropositoCompra, "pcompra", new { @class = "pcompra", id = "Habitar" })
+                Habitar
+            </div>
+            <div class="col-md-1">
+                @Html.RadioButtonFor(Model => Model.PropositoCompra, "pcompra", new { @class = "pcompra", id = "Invertir" })
+                Invertir
+                @*@Html.EditorFor(model => model.PropositoCompra, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.PropositoCompra, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-1">
+            </div>
+            @Html.LabelFor(model => model.HabitaCasa, "Habita casa:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-1">
+                @Html.RadioButtonFor(Model => Model.HabitaCasa, "habitacasa", new { @class = "habitacasa", id = "Propia" })
+                Propia
+            </div>
+            <div class="col-1">
+            </div>
+            <div class="col-md-2">
+                @Html.RadioButtonFor(Model => Model.HabitaCasa, "habitacasa", new { @class = "habitacasa", id = "Rentada" })
+                Rentada
+            </div>
+            @*<div class="col-1">
+            </div>*@
+            <div class="col-md-2">
+                @Html.RadioButtonFor(Model => Model.HabitaCasa, "habitacasa", new { @class = "habitacasa", id = "Familiar" })
+                Familiar
+                @*@Html.EditorFor(model => model.HabitaCasa, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.HabitaCasa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-1">
+            </div>
+            @Html.LabelFor(model => model.FuenteProspeccion, "Fuente Prospección:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.RadioButtonFor(Model => Model.FuenteProspeccion, "Cambaceo", new { @class = "fprospeccion", id = "Cambaceo" })
+                Cambaceo
+                @*@Html.EditorFor(model => model.FuenteProspeccion, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.FuenteProspeccion, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @Html.RadioButtonFor(Model => Model.FuenteProspeccion, "Recomendación", new { @class = "fprospeccion", id = "Recomendacion" })
+                Recomendacion
+            </div>
+            <div class="col-md-2">
+                @Html.RadioButtonFor(Model => Model.FuenteProspeccion, "MKT", new { @class = "fprospeccion", id = "MKT" })
+                MKT
+            </div>
+        </div>
+        <div class="form-group row" id="div-opcionMkt" style="display:none;">
+            <div class="col-1">
+            </div>
+            <label class="control-label col-md-2" for="Regimen">MKT ¿Cual?:</label>
+            <div class="col-4">
+                @*<label for="OpcionMkt">MKT ¿Cual?</label>*@
+                <select id="OpcionMkt" name="OpcionMkt" class="form-control">
+                    <option value="">[*Seleccione una opcion]</option>
+                    <option value="Periodico"> Periodico</option>
+                    <option value="Revista"> Revista</option>
+                    <option value="Radio"> Radio</option>
+                    <option value="Espectacular"> Espectacular</option>
+                    <option value="Volantes"> Volantes</option>
+                    <option value="Evento"> Evento</option>
+                    <option value="Referido"> Referido</option>
+                </select>
+            </div>
+        </div>
+        </div>
+>>>>>>> master
 
         <div class="invoice p-3 mb-3">
             <div class="form-group row align-items-end">
@@ -134,7 +265,10 @@
             <div class="form-group row align-items-end">
                 <div class="col-md-1">
                 </div>
+<<<<<<< HEAD
                 @(ViewBag.MiRegimen)
+=======
+>>>>>>> master
                 @Html.LabelFor(model => model.Regimen, "Regimen:", htmlAttributes: new { @class = "control-label col-md-1" })
                 <div class="col-md-3">
                     @Html.DropDownList("Regimen", (List<SelectListItem>)ViewBag.MiRegimen, htmlAttributes: new { @class = "form-control" })
@@ -238,7 +372,11 @@
                 </div>
                 @Html.LabelFor(model => model.Sueldo, "Sueldo:", htmlAttributes: new { @class = "control-label col-md-1 text-right" })
                 <div class="col-md-3">
+<<<<<<< HEAD
                     @Html.EditorFor(model => model.Sueldo, new { htmlAttributes = new { @class = "form-control currency" } })
+=======
+                    @Html.EditorFor(model => model.Sueldo, new { htmlAttributes = new { @class = "form-control" } })
+>>>>>>> master
                     @Html.ValidationMessageFor(model => model.Sueldo, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -350,6 +488,10 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+=======
+    
+>>>>>>> master
 
     @Scripts.Render("~/clientes/js")
 

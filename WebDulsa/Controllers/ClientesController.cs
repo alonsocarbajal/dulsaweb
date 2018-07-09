@@ -48,7 +48,7 @@ namespace WebDulsa.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nombre,Regimen,Nacionalidad,Ciudad,Colonia,Calle,Numero,TelefonoCasa,TelefonoCelular,TelefonoOficina,Email,Rfc,Curp,FechaNacimiento,LugarNacimiento,Empresa,Sueldo,Beneficiario,AqueSeDedica,EstadoCivil,Sexo,PropositoCompra,HabitaCasa,FuenteProspeccion,Referencia1,TelReferencia1,Referencia2,TelReferencia2,Referencia3,TelReferencia3,FormaPago")] Cliente cliente)
+        public ActionResult Create([Bind(Include = "Id,Nombre,Regimen,Nacionalidad,Ciudad,Colonia,Calle,Numero,TelefonoCasa,TelefonoCelular,TelefonoOficina,Email,Rfc,Curp,FechaNacimiento,LugarNacimiento,Empresa,Sueldo,Beneficiario, OpcionMkt,AqueSeDedica,EstadoCivil,Sexo,PropositoCompra,HabitaCasa,FuenteProspeccion,Referencia1,TelReferencia1,Referencia2,TelReferencia2,Referencia3,TelReferencia3,FormaPago")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
