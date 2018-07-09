@@ -16,47 +16,71 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <div class="invoice p-3 mb-3">
-        <div class="col-md-1">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-10">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ClienteId, "Cliente:", htmlAttributes: new { @class = "control-label col-md-1" })
+                        <div class="col-md-7">
+                            @Html.DropDownList("ClienteId", null, "-- Seleccione un cliente --", htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group row">
+                        <div class="col-sm-2"></div>
+                        @Html.LabelFor(model => model.Fecha, "Fecha:", htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+                        @*<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>*@
+                        <div class="col-sm-8">
+                            @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                            @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
+                            @*<input type="password" class="form-control" id="inputPassword" placeholder="Password">*@
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-2"></div>
+                        @Html.LabelFor(model => model.LoteId, "Fecha:", htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+                        @*<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>*@
+                        <div class="col-sm-8">
+                            @Html.DropDownList("LoteId", null, "-- Seleccione un lote --", htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.LoteId, "", new { @class = "text-danger" })
+                            @*<input type="password" class="form-control" id="inputPassword" placeholder="Password">*@
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-2"></div>
+                        @Html.LabelFor(model => model.PrototipoId, "Prototipo:", htmlAttributes: new { @class = "control-label col-md-2" })
+                        @*<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>*@
+                        <div class="col-sm-8">
+                            @Html.DropDownList("PrototipoId", null, "Seleccione un prototipo", htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.PrototipoId, "", new { @class = "text-danger" })
+                            @*<input type="password" class="form-control" id="inputPassword" placeholder="Password">*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title text-center">INFORMACIÓN</h3>
+                        </div>
+                        <div class="card-body text-center">
+                                <p class="text-center"><strong>Casa modelo:</strong></p>
+                                <p class="text-center"><strong>m<sup>2</sup> de construcción:</strong></p>
+                                <p class="text-center"><strong>Excedente:</strong></p>
+                                <p class="text-center"><strong>m<sup>2</sup> de excedente:</strong></p>
+                                <p class="text-center"><strong>Precio total:</strong></p>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+
+                </div>
+            </div>
         </div>
-        <div class="form-group row align-items-end">
-            <div class="col-md-1">
-            </div>
-            @Html.LabelFor(model => model.ClienteId, "Cliente:", htmlAttributes: new { @class = "control-label col-md-1"})
-            <div class="col-md-7">
-                @Html.DropDownList("ClienteId", null,"-- Seleccione un cliente --", htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <br />
-        <div class="form-group row align-items-end">
-            <div class="col-md-1">
-            </div>
-            @Html.LabelFor(model => model.Fecha, "Fecha:", htmlAttributes: new { @class = "control-label col-md-1" })
-            <div class="col-md-3">
-                @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
-                @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <br />
-        <div class="form-group row align-items-end">
-            <div class="col-md-1">
-            </div>
-            @Html.LabelFor(model => model.LoteId, "Lote:", htmlAttributes: new { @class = "control-label col-md-1" })
-            <div class="col-md-3">
-                @Html.DropDownList("LoteId", null,"-- Seleccione un lote --", htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.LoteId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <br />
-        <div class="form-group row align-items-end">
-            <div class="col-md-1">
-            </div>
-            @Html.LabelFor(model => model.PrototipoId, "Prototipo:", htmlAttributes: new { @class = "control-label col-md-1" })
-            <div class="col-md-3">
-                @Html.DropDownList("PrototipoId", null,"Seleccione un prototipo", htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.PrototipoId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        
     </div>
 
     <div class="invoice p-3 mb-3">
