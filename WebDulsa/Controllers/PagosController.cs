@@ -10,7 +10,7 @@ using Modelo;
 
 namespace WebDulsa.Controllers
 {
-    public class PagoesController : Controller
+    public class PagosController : Controller
     {
         private Contexto db = new Contexto();
         // GET: Pagoes
@@ -42,6 +42,7 @@ namespace WebDulsa.Controllers
             ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nombre");
             ViewBag.LoteId = new SelectList(db.Lotes, "Id", "Descripcion");
             ViewBag.PrototipoId = new SelectList(db.Prototipos, "Id", "Descripcion");
+            ViewBag.MiBanco = ObtenerBanco();
             return View();
         }
 
@@ -63,6 +64,7 @@ namespace WebDulsa.Controllers
             ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nombre", pago.ClienteId);
             ViewBag.LoteId = new SelectList(db.Lotes, "Id", "Descripcion", pago.LoteId);
             ViewBag.PrototipoId = new SelectList(db.Prototipos, "Id", "Descripcion", pago.PrototipoId);
+            ViewBag.MiBanco = ObtenerBanco();
             return View(pago);
         }
 
@@ -138,6 +140,53 @@ namespace WebDulsa.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public List<SelectListItem> ObtenerBanco()
+        {
+            return new List<SelectListItem>()
+            {
+                new SelectListItem()
+                {
+                    Text="BANAMEX",
+                    Value="BANAMEX"
+                },
+                new SelectListItem()
+                {
+                    Text="BBVA BANCOMER",
+                    Value="BBVA BANCOMER"
+                },
+                new SelectListItem()
+                {
+                    Text="SANTANDER",
+                    Value="SANTANDER"
+                },
+                new SelectListItem()
+                {
+                    Text="BANORTE",
+                    Value="BANORTE"
+                },
+                new SelectListItem()
+                {
+                    Text="SCOTIABANK",
+                    Value="SCOTIABANK"
+                },
+                new SelectListItem()
+                {
+                    Text="HSBC",
+                    Value="HSBC"
+                },
+                new SelectListItem()
+                {
+                    Text="BAJIO",
+                    Value="BAJIO"
+                },
+                new SelectListItem()
+                {
+                    Text="OTRO",
+                    Value="OTRO"
+                }
+            };
         }
     }
 }

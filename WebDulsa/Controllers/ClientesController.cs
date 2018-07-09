@@ -38,6 +38,8 @@ namespace WebDulsa.Controllers
         // GET: Clientes/Create
         public ActionResult Create()
         {
+            ViewBag.MiRegimen = ObtenerRegimen();
+            ViewBag.MiNacionalidad   = ObtenerNacionalidad();
             return View();
         }
 
@@ -50,11 +52,13 @@ namespace WebDulsa.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 db.Clientes.Add(cliente);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.MiRegimen = ObtenerRegimen();
+            ViewBag.MiNacionalidad = ObtenerNacionalidad();
             return View(cliente);
         }
 
@@ -122,6 +126,45 @@ namespace WebDulsa.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public List<SelectListItem> ObtenerRegimen()
+        {
+            return new List<SelectListItem>()
+            {
+                new SelectListItem()
+                {
+                    Text="SOLTERO",
+                    Value="SOLTERO"
+                },
+                new SelectListItem()
+                {
+                    Text="BIENES MANCOMUNADOS",
+                    Value="BIENES MANCOMUNADOS"
+                },
+                new SelectListItem()
+                {
+                    Text="SEPARACION DE BIENES",
+                    Value="SEPARACION DE BIENES"
+                }
+            };
+        }
+
+        public List<SelectListItem> ObtenerNacionalidad()
+        {
+            return new List<SelectListItem>()
+            {
+                new SelectListItem()
+                {
+                    Text="MEXICANA",
+                    Value="MEXICANA"
+                },
+                new SelectListItem()
+                {
+                    Text="EXTRANJERO",
+                    Value="EXTRANJERO"
+                },
+             };
         }
     }
 }

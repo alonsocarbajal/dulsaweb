@@ -197,13 +197,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AsesorsController.cs" />
+    <Compile Include="Controllers\AsesoresController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\EtapasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LotesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PagoesController.cs" />
+    <Compile Include="Controllers\PagosController.cs" />
     <Compile Include="Controllers\PrototiposController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -714,11 +714,11 @@
     <Content Include="Views\Shared\_Menu.cshtml" />
     <Content Include="Views\Shared\_Encabezado.cshtml" />
     <Content Include="Views\Shared\_PiePagina.cshtml" />
-    <Content Include="Views\Asesors\Create.cshtml" />
-    <Content Include="Views\Asesors\Delete.cshtml" />
-    <Content Include="Views\Asesors\Details.cshtml" />
-    <Content Include="Views\Asesors\Edit.cshtml" />
-    <Content Include="Views\Asesors\Index.cshtml" />
+    <Content Include="Views\Asesores\Create.cshtml" />
+    <Content Include="Views\Asesores\Delete.cshtml" />
+    <Content Include="Views\Asesores\Details.cshtml" />
+    <Content Include="Views\Asesores\Edit.cshtml" />
+    <Content Include="Views\Asesores\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Prototipos\Create.cshtml" />
     <Content Include="Views\Prototipos\Delete.cshtml" />
@@ -740,11 +740,11 @@
     <Content Include="Views\Etapas\Details.cshtml" />
     <Content Include="Views\Etapas\Edit.cshtml" />
     <Content Include="Views\Etapas\Index.cshtml" />
-    <Content Include="Views\Pagoes\Create.cshtml" />
-    <Content Include="Views\Pagoes\Delete.cshtml" />
-    <Content Include="Views\Pagoes\Details.cshtml" />
-    <Content Include="Views\Pagoes\Edit.cshtml" />
-    <Content Include="Views\Pagoes\Index.cshtml" />
+    <Content Include="Views\Pagos\Create.cshtml" />
+    <Content Include="Views\Pagos\Delete.cshtml" />
+    <Content Include="Views\Pagos\Details.cshtml" />
+    <Content Include="Views\Pagos\Edit.cshtml" />
+    <Content Include="Views\Pagos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

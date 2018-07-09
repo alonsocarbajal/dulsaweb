@@ -47,22 +47,22 @@
             </div>
             @Html.LabelFor(model => model.Version, "Versión", htmlAttributes: new { @class = "control-label col-md-1" })
             <div class="col-md-3">
-                @Html.EditorFor(model => model.Version, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Version, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0"  } })
                 @Html.ValidationMessageFor(model => model.Version, "", new { @class = "text-danger" })
             </div>
             <div class="col-md-1">
             </div>
             @Html.LabelFor(model => model.MetrosCuadrado, "M2", htmlAttributes: new { @class = "control-label col-md-1 text-right" })
             <div class="col-md-2">
-                @Html.EditorFor(model => model.MetrosCuadrado, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MetrosCuadrado, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0", @max = "24" } })
                 @Html.ValidationMessageFor(model => model.MetrosCuadrado, "", new { @class = "text-danger" })
             </div>
         </div>
         <br />
         <br />
         <div class="form-group">
-            <div class="ml-auto col-md-2">
-                <input type="submit" value="Guardar" class="btn btn-primary" /> |
+            <div class="ml-auto col-md-3">
+                <input type="submit" value="Guardar" class="btn btn-primary" /> &nbsp;
                 @Html.ActionLink("Atras", "Index", null, new { @class = "btn btn-default" })
             </div>
         </div>
