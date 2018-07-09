@@ -42,6 +42,8 @@ namespace Modelo
         public string Beneficiario { get; set; }
         [Required]
         public string AqueSeDedica { get; set; }
+        [Required]
+        public string OpcionMkt { get; set; }
         public string EstadoCivil { get; set; }
         public string Sexo { get; set; }
         public string PropositoCompra { get; set; }
