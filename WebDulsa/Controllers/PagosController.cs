@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Modelo;
+using Newtonsoft.Json;
 
 namespace WebDulsa.Controllers
 {
@@ -187,6 +188,25 @@ namespace WebDulsa.Controllers
                     Value="OTRO"
                 }
             };
+        }
+
+        public JsonResult GetEtapa(int LoteId)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var lista = db.Etapas.ToList().Select(x => new
+            {
+                x.Id,
+                x.Dalia,
+                x.Azalea,
+                x.Iris,
+                x.Orquidea,
+                x.Bugambilia,
+                x.PrecioM2Excedente,
+                x.MontoEsquina,
+                Lotes = JsonConvert.DeserializeObject<IEnumerable<int>>(x.Lotes)
+            });
+            var resultado = lista.FirstOrDefault(e => e.Lotes.Where(l => l == LoteId).Any());
+            return Json(resultado, JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -17,9 +17,12 @@ namespace Modelo
         }
 
         public int Id { get; set; }
+        [Required]
         public string Descripcion { get; set; }
         public int Manzana { get; set; }
+        [Required]
         public Nullable<decimal> M2Terreno { get; set; }
+        [Required]
         public Nullable<decimal> ExcedenteM2 { get; set; }
         public Boolean Esquina { get; set; }
         

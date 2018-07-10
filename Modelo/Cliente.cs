@@ -40,9 +40,7 @@ namespace Modelo
         public string Empresa { get; set; }
         public Nullable<Decimal> Sueldo { get; set; }
         public string Beneficiario { get; set; }
-        [Required]
         public string AqueSeDedica { get; set; }
-        [Required]
         public string OpcionMkt { get; set; }
         public string EstadoCivil { get; set; }
         public string Sexo { get; set; }

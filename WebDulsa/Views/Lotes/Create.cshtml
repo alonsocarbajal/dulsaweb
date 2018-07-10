@@ -39,14 +39,14 @@
             </div>
             @Html.LabelFor(model => model.M2Terreno,"M2 Terreno:", htmlAttributes: new { @class = "control-label col-md-1" })
             <div class="col-md-3">
-                @Html.EditorFor(model => model.M2Terreno, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.M2Terreno, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0" } })
                 @Html.ValidationMessageFor(model => model.M2Terreno, "", new { @class = "text-danger" })
             </div>
             @*<div class="col-md-1">
             </div>*@
             @Html.LabelFor(model => model.ExcedenteM2, "Excedente M2:", htmlAttributes: new { @class = "control-label col-md-2 text-right" })
             <div class="col-md-2">
-                @Html.EditorFor(model => model.ExcedenteM2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ExcedenteM2, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0" } })
                 @Html.ValidationMessageFor(model => model.ExcedenteM2, "", new { @class = "text-danger" })
             </div>
         </div>
