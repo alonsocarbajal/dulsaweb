@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Modelo;
+using Newtonsoft.Json;
 
 namespace WebDulsa.Controllers
 {
@@ -19,7 +20,29 @@ namespace WebDulsa.Controllers
             var pagos = db.Pagos.Include(p => p.Asesor).Include(p => p.Cliente).Include(p => p.Lote).Include(p => p.Prototipo);
             return View(pagos.ToList());
         }
+        //[HttpPost]
+        //public JsonResult GetInfo(int loteId=null, )
+        //{
 
+        //}
+
+        public JsonResult GetEtapa(int loteId)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var lista = db.Etapas.ToList().Select(x => new
+            {
+                x.Id,
+                x.Azalea,
+                x.Bugambilia,
+                x.Iris,
+                x.PrecioM2Excedente,
+                x.Orquidea,
+                x.MontoEsquina,
+                Lotes = JsonConvert.DeserializeObject<IEnumerable<int>>(x.Lotes)
+            });
+            var resultado = lista.FirstOrDefault(e => e.Lotes.Where(l => l == loteId).Any());
+            return Json(resultado, JsonRequestBehavior.AllowGet);
+        }
         // GET: Pagoes/Details/5
         public ActionResult Details(int? id)
         {
