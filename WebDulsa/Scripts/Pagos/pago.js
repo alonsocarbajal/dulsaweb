@@ -1,19 +1,4 @@
 ﻿$(document).ready(() => {
-    $('body').submit(function (event) {
-        var prototipo = $('#PrototipoId').val();
-        var serviceURL = 'GetPrototipoId?descripcion=' + prototipo;
-        $.ajax({
-            type: "Get",
-            url: serviceURL,
-            data: param = "",
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-        }).done((data) => {
-            console.log(data);
-            $('#PrototipoId').val(data.Id);
-        });
-      
-    });
     $('.form-control').change(function (event) {
         if (event.target.id === 'LoteId' || event.target.id === 'PrototipoId')
         {
@@ -98,5 +83,20 @@
         $('#ImportePago3').val($('#ImportePago3').maskMoney('unmasked')[0]);
         $('#ImportePago4').val($('#ImportePago4').maskMoney('unmasked')[0]);
         $('#ImportePago5').val($('#ImportePago5').maskMoney('unmasked')[0]);
+        //var prototipo = $('#PrototipoId').val();
+        //if (prototipo == '')
+        //    return false;
+        //var serviceURL = 'GetPrototipoId?descripcion=' + prototipo;
+        //$.ajax({
+        //    type: "Get",
+        //    url: serviceURL,
+        //    data: param = "",
+        //    contentType: "application/json; charset=utf-8",
+        //    dataType: "json",
+        //}).done((data) => {
+        //    $('#PrototipoId').val(data.Id);
+        //    console.log(event.target.submit());
+        //    });
+        //event.preventDefault();
     });
 });

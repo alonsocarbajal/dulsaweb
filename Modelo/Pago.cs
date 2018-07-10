@@ -13,7 +13,7 @@ namespace Modelo
         public int Id { get; set; }
         public int ClienteId { get; set; }
         public int LoteId { get; set; }
-        public int PrototipoId { get; set; }
+        public string PrototipoId { get; set; }
         public DateTime Fecha { get; set; }
         public Nullable<decimal> MontoApartado { get; set; }
         public string Credito { get; set; }
@@ -35,8 +35,8 @@ namespace Modelo
         public string Observaciones { get; set; }
 
 
-        [ForeignKey("PrototipoId")]
-        public virtual Prototipo Prototipo { get; set; }
+        //[ForeignKey("PrototipoId")]
+        //public virtual Prototipo Prototipo { get; set; }
         [ForeignKey("ClienteId")]
         public virtual Cliente Cliente { get; set; }
         [ForeignKey("AsesorId")]

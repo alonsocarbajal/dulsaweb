@@ -17,7 +17,7 @@ namespace WebDulsa.Controllers
         // GET: Pagoes
         public ActionResult Index()
         {
-            var pagos = db.Pagos.Include(p => p.Asesor).Include(p => p.Cliente).Include(p => p.Lote).Include(p=>p.Prototipo);
+            var pagos = db.Pagos.Include(p => p.Asesor).Include(p => p.Cliente).Include(p => p.Lote);
             return View(pagos.ToList());
         }
         //[HttpPost]
@@ -50,6 +50,8 @@ namespace WebDulsa.Controllers
         public JsonResult GetPrototipo(string descripcion)
         {
             db.Configuration.ProxyCreationEnabled = false;
+            if (string.IsNullOrEmpty(descripcion))
+                return Json(0, JsonRequestBehavior.AllowGet);
             var prototipo= db.Prototipos.Where(p => p.Descripcion.Equals(descripcion)).OrderByDescending(p => p.Version).FirstOrDefault();
             return Json(prototipo, JsonRequestBehavior.AllowGet);
         }
@@ -97,7 +99,7 @@ namespace WebDulsa.Controllers
             //    ModelState.is
             if (ModelState.IsValid)
             {
-                pago.PrototipoId = db.Prototipos.FirstOrDefault(p => p.Descripcion.ToLower().Equals(pago.PrototipoId)).Id;
+                //pago.PrototipoId = db.Prototipos.FirstOrDefault(p => p.Descripcion.ToLower().Equals(pago.PrototipoId)).Id;
                 db.Pagos.Add(pago);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -106,7 +108,7 @@ namespace WebDulsa.Controllers
             ViewBag.AsesorId = new SelectList(db.Asesores, "Id", "Nombre", pago.AsesorId);
             ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nombre", pago.ClienteId);
             ViewBag.LoteId = new SelectList(db.Lotes, "Id", "Descripcion", pago.LoteId);
-            ViewBag.PrototipoId = new SelectList(db.Prototipos, "Id", "Descripcion", pago.PrototipoId);
+            ViewBag.PrototipoId = new SelectList(db.Prototipos, "Descripcion", "Descripcion", pago.PrototipoId);
             ViewBag.MiBanco = ObtenerBanco();
             ViewBag.MiCredito = ObtenerCredito();
             return View(pago);
