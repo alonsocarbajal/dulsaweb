@@ -29,19 +29,29 @@ namespace WebDulsa.Controllers
         public JsonResult GetEtapa(int loteId)
         {
             db.Configuration.ProxyCreationEnabled = false;
+            var mtsExcedente = db.Lotes.FirstOrDefault(l => l.Id == loteId) != null ? db.Lotes.FirstOrDefault(l => l.Id == loteId).ExcedenteM2 : 0;
             var lista = db.Etapas.ToList().Select(x => new
             {
                 x.Id,
+                x.Dalia,
                 x.Azalea,
                 x.Bugambilia,
                 x.Iris,
                 x.PrecioM2Excedente,
                 x.Orquidea,
                 x.MontoEsquina,
-                Lotes = JsonConvert.DeserializeObject<IEnumerable<int>>(x.Lotes)
+                Lotes = JsonConvert.DeserializeObject<IEnumerable<int>>(x.Lotes),
+                mtsExcedente=mtsExcedente
             });
             var resultado = lista.FirstOrDefault(e => e.Lotes.Where(l => l == loteId).Any());
             return Json(resultado, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetPrototipo(string descripcion)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var prototipo= db.Prototipos.Where(p => p.Descripcion.Equals(descripcion)).OrderByDescending(p => p.Version).FirstOrDefault();
+            return Json(prototipo, JsonRequestBehavior.AllowGet);
         }
         // GET: Pagoes/Details/5
         public ActionResult Details(int? id)
@@ -64,7 +74,7 @@ namespace WebDulsa.Controllers
             ViewBag.AsesorId = new SelectList(db.Asesores, "Id", "Nombre");
             ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nombre");
             ViewBag.LoteId = new SelectList(db.Lotes, "Id", "Descripcion");
-            ViewBag.PrototipoId = new SelectList(db.Prototipos, "Id", "Descripcion");
+            ViewBag.PrototipoId = new SelectList(db.Prototipos, "Descripcion", "Descripcion");
             ViewBag.MiBanco = ObtenerBanco();
             return View();
         }

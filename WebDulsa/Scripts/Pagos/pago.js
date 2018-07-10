@@ -1,37 +1,73 @@
 ﻿$(document).ready(() => {
-    $('#LoteId').change(function (event) {
-        console.log($(this).val());
-        var template = '<p class="text-center"><strong>Casa modelo:<></strong></p>' +
-            '<p class="text-center" > <strong>m<sup>2</sup> de construcción:</strong></p >' +
-            '<p class="text-center"><strong>Excedente:</strong></p>' +
-            '<p class="text-center"><strong>m<sup>2</sup> de excedente:</strong></p>' +
-            '<p class="text-center"><strong>Precio total:</strong></p>';
-        var serviceURL = 'GetEtapa?loteId='+$(this).val();
+    $('.form-control').change(function (event) {
+        if (event.target.id === 'LoteId' || event.target.id === 'PrototipoId')
+        {
+            var lote = $('#LoteId').val();
+            var prototipo = $('#PrototipoId').val();
+            if ((lote !== '') && (prototipo !== ''))
+            {
+                getLote(lote, prototipo); 
+            }
+        }
 
-        $.ajax({
-            type: "Get",
-            url: serviceURL,
-            data: param = "",
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: successFunc,
-            error: errorFunc
-        });
-
+        function getLote(lote, prototipo) {
+            var serviceURL = 'GetEtapa?loteId=' + lote;
+            $.ajax({
+                type: "Get",
+                url: serviceURL,
+                data: param = "",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: successFunc,
+                error: errorFunc
+            });
+        }
+        
         function successFunc(data, status) {
             asignarValores(data);
         }
         function asignarValores(dato) {
-            var template = '<p class="text-center"><strong>Casa modelo:'+dato.+'</strong></p>' +
-                '<p class="text-center" > <strong>m<sup>2</sup> de construcción:</strong></p >' +
-                '<p class="text-center"><strong>Excedente:</strong></p>' +
-                '<p class="text-center"><strong>m<sup>2</sup> de excedente:</strong></p>' +
-                '<p class="text-center"><strong>Precio total:</strong></p>';
-            $('#card-informacion').html(template);
+            $('#excedente').html(dato.mtsExcedente ?'Si' : 'No');
+            $('#mts-excedente').html(dato.mtsExcedente ? dato.mtsExcedente: 0);
+            var lote = $('#LoteId').val();
+            var prototipo = $('#PrototipoId').val();
+            var valor = 0;
+            switch (prototipo) {
+                case 'DALIA':
+                    valor = dato.Dalia;
+                    break;
+                case 'Iris':
+                    valor = dato.Iris;
+                    break;
+                case 'AZALEA':
+                    valor = dato.Azalea;
+                    break;
+                case 'ORQUIDEA':
+                    valor = dato.ORQUIDEA;
+                    break;
+                case 'BUGAMBILIA':
+                    valor = dato.ORQUIDEA;
+                    break;
+            }
+            $('#precio-total').html(valor);
+            $('#casa-modelo').html(prototipo);
+            serviceURL = 'GetPrototipo?descripcion=' + prototipo;
+            $.ajax({
+                type: "Get",
+                url: serviceURL,
+                data: param = "",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: successPrototipo,
+                error: errorFunc
+            });
+        }
+        function successPrototipo(dato, status) {
+            $('#mts-construccion').html(dato.MetrosCuadrado);
         }
 
         function errorFunc() {
-            asignarCheckbox(undefined);
+            alert('Ocurrio un error al recuperar información');
         }
     })
 });

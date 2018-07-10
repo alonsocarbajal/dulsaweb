@@ -53,3 +53,4 @@ C:\self\git\dulsaweb\Modelo\obj\Debug\Modelo.csproj.CopyComplete
 C:\self\git\dulsaweb\Modelo\obj\Debug\Modelo.dll
 C:\self\git\dulsaweb\Modelo\obj\Debug\Modelo.pdb
 C:\self\git\dulsaweb\Modelo\obj\Debug\Modelo.csprojAssemblyReference.cache
+C:\self\git\dulsaweb-new\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
