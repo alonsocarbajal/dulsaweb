@@ -13,7 +13,6 @@ namespace Modelo
         public Prototipo()
         {
             this.ListaVenta = new HashSet<ListaVenta>();
-            this.Pago = new HashSet<Pago>();
         }
 
         public int Id { get; set; }
@@ -22,6 +21,5 @@ namespace Modelo
         public Nullable<decimal> Version { get; set; }
 
         public virtual ICollection<ListaVenta> ListaVenta { get; set; }
-        public virtual ICollection<Pago> Pago { get; set; }
     }
 }

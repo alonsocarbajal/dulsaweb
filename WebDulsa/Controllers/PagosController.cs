@@ -17,7 +17,7 @@ namespace WebDulsa.Controllers
         // GET: Pagoes
         public ActionResult Index()
         {
-            var pagos = db.Pagos.Include(p => p.Asesor).Include(p => p.Cliente).Include(p => p.Lote).Include(p => p.Prototipo);
+            var pagos = db.Pagos.Include(p => p.Asesor).Include(p => p.Cliente).Include(p => p.Lote).Include(p=>p.Prototipo);
             return View(pagos.ToList());
         }
         //[HttpPost]
@@ -53,6 +53,12 @@ namespace WebDulsa.Controllers
             var prototipo= db.Prototipos.Where(p => p.Descripcion.Equals(descripcion)).OrderByDescending(p => p.Version).FirstOrDefault();
             return Json(prototipo, JsonRequestBehavior.AllowGet);
         }
+        public JsonResult GetPrototipoId(string descripcion)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            return Json(db.Prototipos.FirstOrDefault(p => p.Descripcion.ToLower().Equals(descripcion)).Id, JsonRequestBehavior.AllowGet);
+        }
+
         // GET: Pagoes/Details/5
         public ActionResult Details(int? id)
         {
@@ -76,6 +82,7 @@ namespace WebDulsa.Controllers
             ViewBag.LoteId = new SelectList(db.Lotes, "Id", "Descripcion");
             ViewBag.PrototipoId = new SelectList(db.Prototipos, "Descripcion", "Descripcion");
             ViewBag.MiBanco = ObtenerBanco();
+            ViewBag.MiCredito = ObtenerCredito();
             return View();
         }
 
@@ -86,8 +93,11 @@ namespace WebDulsa.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,ClienteId,LoteId,PrototipoId,Fecha,MontoApartado,Credito,Banco,Vigencia,MontoEnganche,Pago1,ImportePago1,Pago2,ImportePago2,Pago3,ImportePago3,Pago4,ImportePago4,Pago5,ImportePago5,Cambios,AsesorId,Observaciones")] Pago pago)
         {
+            //if(ModelState.FirstOrDefault(p=>p.Key.Contains()))
+            //    ModelState.is
             if (ModelState.IsValid)
             {
+                pago.PrototipoId = db.Prototipos.FirstOrDefault(p => p.Descripcion.ToLower().Equals(pago.PrototipoId)).Id;
                 db.Pagos.Add(pago);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -98,6 +108,7 @@ namespace WebDulsa.Controllers
             ViewBag.LoteId = new SelectList(db.Lotes, "Id", "Descripcion", pago.LoteId);
             ViewBag.PrototipoId = new SelectList(db.Prototipos, "Id", "Descripcion", pago.PrototipoId);
             ViewBag.MiBanco = ObtenerBanco();
+            ViewBag.MiCredito = ObtenerCredito();
             return View(pago);
         }
 
@@ -213,6 +224,53 @@ namespace WebDulsa.Controllers
                 {
                     Text="BAJIO",
                     Value="BAJIO"
+                },
+                new SelectListItem()
+                {
+                    Text="OTRO",
+                    Value="OTRO"
+                }
+            };
+        }
+
+        public List<SelectListItem> ObtenerCredito()
+        {
+            return new List<SelectListItem>()
+            {
+                new SelectListItem()
+                {
+                    Text="BANCARIO",
+                    Value="BANCARIO"
+                },
+                new SelectListItem()
+                {
+                    Text="INFONAVIT",
+                    Value="INFONAVIT"
+                },
+                new SelectListItem()
+                {
+                    Text="COFI",
+                    Value="COFI"
+                },
+                new SelectListItem()
+                {
+                    Text="FOVISSSTE",
+                    Value="FOVISSSTE"
+                },
+                new SelectListItem()
+                {
+                    Text="ALIADOS",
+                    Value="ALIADOS"
+                },
+                new SelectListItem()
+                {
+                    Text="CONTADO",
+                    Value="CONTADO"
+                },
+                new SelectListItem()
+                {
+                    Text="PEMEX",
+                    Value="PEMEX"
                 },
                 new SelectListItem()
                 {

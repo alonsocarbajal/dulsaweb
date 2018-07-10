@@ -21,10 +21,10 @@
                 <div class="row">
                     <div class="col-2"></div>
                     <div class="col-10">
-                        <div class="form-group">
+                        <div class="form-group row align-items-end">
                             @Html.LabelFor(model => model.ClienteId, "Cliente:", htmlAttributes: new { @class = "control-label col-md-1" })
                             <div class="col-md-7">
-                                @Html.DropDownList("ClienteId", null, "-- Seleccione un cliente --", htmlAttributes: new { @class = "form-control" })
+                                @Html.DropDownList("ClienteId", null, "-- Seleccione --", htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -32,6 +32,7 @@
                 </div>
                 <div class="row">
                     <div class="col-6">
+                        <br />
                         <div class="form-group row">
                             <div class="col-sm-2"></div>
                             @Html.LabelFor(model => model.Fecha, "Fecha:", htmlAttributes: new { @class = "col-sm-2 col-form-label" })
@@ -42,22 +43,24 @@
                                 @*<input type="password" class="form-control" id="inputPassword" placeholder="Password">*@
                             </div>
                         </div>
+                        <br /> 
                         <div class="form-group row">
                             <div class="col-sm-2"></div>
                             @Html.LabelFor(model => model.LoteId, "Lote:", htmlAttributes: new { @class = "col-sm-2 col-form-label" })
                             @*<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>*@
                             <div class="col-sm-8">
-                                @Html.DropDownList("LoteId", null, "-- Seleccione un lote --", htmlAttributes: new { @class = "form-control" })
+                                @Html.DropDownList("LoteId", null, "-- Seleccione --", htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.LoteId, "", new { @class = "text-danger" })
                                 @*<input type="password" class="form-control" id="inputPassword" placeholder="Password">*@
                             </div>
                         </div>
+                        <br />
                         <div class="form-group row">
                             <div class="col-sm-2"></div>
                             @Html.LabelFor(model => model.PrototipoId, "Prototipo:", htmlAttributes: new { @class = "control-label col-md-2" })
                             @*<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>*@
                             <div class="col-sm-8">
-                                @Html.DropDownList("PrototipoId", null, "Seleccione un prototipo", htmlAttributes: new { @class = "form-control" })
+                                @Html.DropDownList("PrototipoId", null, "-- Seleccione --", htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.PrototipoId, "", new { @class = "text-danger" })
                                 @*<input type="password" class="form-control" id="inputPassword" placeholder="Password">*@
                             </div>
@@ -91,12 +94,13 @@
                 </div>
                 @Html.LabelFor(model => model.MontoApartado, "Monto de Apartado:", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.MontoApartado, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.MontoApartado, new { htmlAttributes = new { @class = "form-control currency" } })
                     @Html.ValidationMessageFor(model => model.MontoApartado, "", new { @class = "text-danger" })
                 </div>
                 @Html.LabelFor(model => model.Credito, "Credito:", htmlAttributes: new { @class = "control-label col-md-1" })
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.Credito, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.DropDownList("Credito", (List<SelectListItem>)ViewBag.MiCredito, htmlAttributes: new { @class = "form-control" })
+                    @*@Html.EditorFor(model => model.Credito, new { htmlAttributes = new { @class = "form-control" } })*@
                     @Html.ValidationMessageFor(model => model.Credito, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -112,7 +116,7 @@
                 </div>
                 @Html.LabelFor(model => model.Vigencia, "Vigencia:", htmlAttributes: new { @class = "control-label col-md-1" })
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.Vigencia, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Vigencia, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                     @Html.ValidationMessageFor(model => model.Vigencia, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -123,7 +127,7 @@
             <div class="from-group row align-items-end">
                 @Html.LabelFor(model => model.MontoEnganche, "Monto de enganche:", htmlAttributes: new { @class = "control-label col-md-5 text-right" })
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.MontoEnganche, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.MontoEnganche, new { htmlAttributes = new { @class = "form-control currency" } })
                     @Html.ValidationMessageFor(model => model.MontoEnganche, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -133,11 +137,11 @@
                     <label class="control-label">Primero:</label>
                 </div>
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.Pago1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Pago1, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                     @Html.ValidationMessageFor(model => model.Pago1, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.ImportePago1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.ImportePago1, new { htmlAttributes = new { @class = "form-control currency" } })
                     @Html.ValidationMessageFor(model => model.ImportePago1, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -147,11 +151,11 @@
                     <label class="control-label">Segundo:</label>
                 </div>
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.Pago2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Pago2, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                     @Html.ValidationMessageFor(model => model.Pago2, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.ImportePago2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.ImportePago2, new { htmlAttributes = new { @class = "form-control currency" } })
                     @Html.ValidationMessageFor(model => model.ImportePago2, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -161,11 +165,11 @@
                     <label class="control-label">Tercero:</label>
                 </div>
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.Pago3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Pago3, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                     @Html.ValidationMessageFor(model => model.Pago3, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.ImportePago3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.ImportePago3, new { htmlAttributes = new { @class = "form-control currency" } })
                     @Html.ValidationMessageFor(model => model.ImportePago3, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -175,11 +179,11 @@
                     <label class="control-label">Cuarto:</label>
                 </div>
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.Pago4, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Pago4, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                     @Html.ValidationMessageFor(model => model.Pago4, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.ImportePago4, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.ImportePago4, new { htmlAttributes = new { @class = "form-control currency" } })
                     @Html.ValidationMessageFor(model => model.ImportePago4, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -189,11 +193,11 @@
                     <label class="control-label">Quinto:</label>
                 </div>
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.Pago5, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Pago5, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                     @Html.ValidationMessageFor(model => model.Pago5, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.ImportePago5, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.ImportePago5, new { htmlAttributes = new { @class = "form-control currency" } })
                     @Html.ValidationMessageFor(model => model.ImportePago5, "", new { @class = "text-danger" })
                 </div>
             </div>

@@ -1,4 +1,19 @@
 ﻿$(document).ready(() => {
+    $('body').submit(function (event) {
+        var prototipo = $('#PrototipoId').val();
+        var serviceURL = 'GetPrototipoId?descripcion=' + prototipo;
+        $.ajax({
+            type: "Get",
+            url: serviceURL,
+            data: param = "",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+        }).done((data) => {
+            console.log(data);
+            $('#PrototipoId').val(data.Id);
+        });
+      
+    });
     $('.form-control').change(function (event) {
         if (event.target.id === 'LoteId' || event.target.id === 'PrototipoId')
         {
@@ -6,6 +21,7 @@
             var prototipo = $('#PrototipoId').val();
             if ((lote !== '') && (prototipo !== ''))
             {
+                show();
                 getLote(lote, prototipo); 
             }
         }
@@ -36,17 +52,17 @@
                 case 'DALIA':
                     valor = dato.Dalia;
                     break;
-                case 'Iris':
+                case 'IRIS':
                     valor = dato.Iris;
                     break;
                 case 'AZALEA':
                     valor = dato.Azalea;
                     break;
                 case 'ORQUIDEA':
-                    valor = dato.ORQUIDEA;
+                    valor = dato.Orquidea;
                     break;
                 case 'BUGAMBILIA':
-                    valor = dato.ORQUIDEA;
+                    valor = dato.Bugambilia;
                     break;
             }
             $('#precio-total').html(valor);
@@ -64,10 +80,23 @@
         }
         function successPrototipo(dato, status) {
             $('#mts-construccion').html(dato.MetrosCuadrado);
+            hide();
         }
 
         function errorFunc() {
             alert('Ocurrio un error al recuperar información');
         }
     })
+    $(".currency").maskMoney({
+        formatOnBlur: true, selectAllOnFocus: false, selectAllOnFocus: true, reverse: true, prefix: '$'
+    });
+    $('body').submit(function (event) {
+        $('#MontoApartado').val($('#MontoApartado').maskMoney('unmasked')[0]);
+        $('#MontoEnganche').val($('#MontoEnganche').maskMoney('unmasked')[0]);
+        $('#ImportePago1').val($('#ImportePago1').maskMoney('unmasked')[0]);
+        $('#ImportePago2').val($('#ImportePago2').maskMoney('unmasked')[0]);
+        $('#ImportePago3').val($('#ImportePago3').maskMoney('unmasked')[0]);
+        $('#ImportePago4').val($('#ImportePago4').maskMoney('unmasked')[0]);
+        $('#ImportePago5').val($('#ImportePago5').maskMoney('unmasked')[0]);
+    });
 });

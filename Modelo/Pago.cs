@@ -35,13 +35,12 @@ namespace Modelo
         public string Observaciones { get; set; }
 
 
-
+        [ForeignKey("PrototipoId")]
+        public virtual Prototipo Prototipo { get; set; }
         [ForeignKey("ClienteId")]
         public virtual Cliente Cliente { get; set; }
         [ForeignKey("AsesorId")]
         public virtual Asesor Asesor { get; set; }
-        [ForeignKey("PrototipoId")]
-        public virtual Prototipo Prototipo { get; set; }
         [ForeignKey("LoteId")]
         public virtual Lote Lote { get; set; }
     }
