@@ -653,6 +653,7 @@
     <Content Include="Content\vendor\login\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Content\vendor\login\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Content\vendor\login\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Clientes\cliente.js" />
     <Content Include="Scripts\dashboard.js" />
@@ -726,7 +727,7 @@
     <Content Include="Views\Prototipos\Details.cshtml" />
     <Content Include="Views\Prototipos\Edit.cshtml" />
     <Content Include="Views\Prototipos\Index.cshtml" />
-    <Content Include="Views\Lotes\Create.cshtml" />
+    <Content Include="Views\Lotes\Creedit.cshtml" />
     <Content Include="Views\Lotes\Delete.cshtml" />
     <Content Include="Views\Lotes\Details.cshtml" />
     <Content Include="Views\Lotes\Edit.cshtml" />

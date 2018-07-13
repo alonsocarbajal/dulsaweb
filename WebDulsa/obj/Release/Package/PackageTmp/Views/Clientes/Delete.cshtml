@@ -1,0 +1,272 @@
+﻿@model Modelo.Cliente
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Regimen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Regimen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nacionalidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nacionalidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ciudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Colonia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Colonia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoCasa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoCasa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoCelular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoCelular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoOficina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoOficina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rfc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rfc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Curp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Curp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LugarNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LugarNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sueldo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sueldo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beneficiario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beneficiario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AqueSeDedica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AqueSeDedica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoCivil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoCivil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropositoCompra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropositoCompra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HabitaCasa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HabitaCasa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FuenteProspeccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FuenteProspeccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Referencia1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Referencia1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelReferencia1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelReferencia1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Referencia2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Referencia2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelReferencia2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelReferencia2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Referencia3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Referencia3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelReferencia3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelReferencia3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormaPago)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormaPago)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

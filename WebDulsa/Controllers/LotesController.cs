@@ -89,6 +89,53 @@ namespace WebDulsa.Controllers
             return View(lote);
         }
 
+        public ActionResult Creedit(int? id = null)
+        {
+            if (id == null)
+            {
+                return View();
+            }
+            else
+            {
+                Lote lote = db.Lotes.Find(id);
+                if (lote == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(lote);
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Creedit([Bind(Include = "Id,Descripcion,Manzana,M2Terreno,ExcedenteM2,Esquina")] Lote lote)
+        {
+            if (Id == null)
+            {
+                // insert new record
+                if (ModelState.IsValid)
+                {
+                    db.Lotes.Add(lote);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
+                return View(lote);
+            }
+            else
+            {
+                // update record
+                if (ModelState.IsValid)
+                {
+                    db.Entry(lote).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(lote);
+            }
+        }
+
+
         // GET: Lotes/Delete/5
         public ActionResult Delete(int? id)
         {

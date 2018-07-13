@@ -48,10 +48,10 @@
     }
     function asignarCheckbox(lista) {
         var template = '<div class="form-group row align-items-center"><div class="col-md-2"></div>';
-        for (var i = 0; i < 24; i++) {
-            if (i % 4 == 0) {
+        for (var i = 0; i < 84; i++) {
+            if (i % 12 == 0) {
                 template += '</div>';
-                template += '<div class="form-group row align-items-center"><div class="col-md-2"></div>';
+                template += '<div class="form-group row align-items-center">';
             }
             var isDisable = lista.find(l => l == (i+1)) ? 'disabled' : '';
             template += '<div class="col-md-2"><div class="form-check-inline ' +isDisable +'">';

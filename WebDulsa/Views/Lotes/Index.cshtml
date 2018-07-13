@@ -7,13 +7,13 @@
 @*<h2>Index</h2>*@
 <br />
 <p>
-    @Html.ActionLink("Nuevo", "Create", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Nuevo", "Creedit", null, new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
+                Lote
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Manzana)
@@ -50,9 +50,9 @@
                     @Html.DisplayFor(modelItem => item.Esquina)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Edit", "Creedit", new { id = item.Id }) |
                     @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
                 </td>
             </tr>
         }

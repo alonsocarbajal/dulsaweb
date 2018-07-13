@@ -1,0 +1,12 @@
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Release\Modelo.dll.config
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Release\Modelo.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Release\Modelo.pdb
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Release\EntityFramework.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Release\EntityFramework.xml
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Release\Modelo.csprojAssemblyReference.cache
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Release\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Release\Modelo.csproj.CopyComplete
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Release\Modelo.dll
+C:\Users\Alonso\Documents\Visual Studio 2015\Projects\dulsaweb\Modelo\obj\Release\Modelo.pdb

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/vendor/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    @Styles.Render("~/adminlte/css")
+    @Scripts.Render("~/adminlte/js")
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        @Html.Partial("_Encabezado")
+        @Html.Partial("_Menu")
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <img src="~/Content/img/andalucia3.png" class="img-fluid" alt="Responsive image">
+            @*<img src="~/Content/img/andalucia3.png" width="100" />*@
+
+            <!-- Content Header (Page header) -->
+            <!-- /.content-header -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            @RenderBody()
+                        </div>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+
+        </div>
+        @Html.Partial("_PiePagina")
+    </div>
+    
+    
+    @Scripts.Render("~/clientes/js")
+
+    @RenderSection("scripts", required: false)
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+</body>
+</html>

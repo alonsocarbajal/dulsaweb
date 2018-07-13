@@ -1,0 +1,128 @@
+﻿@model Modelo.Etapa
+
+@{
+    ViewBag.Title = "Create";
+}
+<br />
+@*<h2>Create</h2>*@
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    @*<h4>Etapa</h4>
+        <hr />*@
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="invoice p-3 mb-3">
+        <div class="form-group row align-items-end">
+            <div class="col-md-1">
+            </div>
+            @Html.LabelFor(model => model.Descripcion, "Etapa:", htmlAttributes: new { @class = "control-label col-md-5 text-right" })
+            <div class="col-md-1">
+                @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0" } })
+                @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group row align-items-center">
+            <div class="col-md-2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" id="contenedor">
+
+            </div>
+            <div class="row align-items-center">
+                <span id="error-lotes" class="text-danger" style="display:none;">Es necesario seleccionar al menos 1 lote.</span>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="form-group row align-content-md-center">
+            <div class="col-md-5 control-label text-md-right">
+                <label class="control-label">MODELOS:</label>
+            </div>
+            <div class="col-md-4 control-label text-md-center">
+                <label class="control-label">PRECIOS:</label>
+            </div>
+        </div>
+        <div class="form-group row align-items-end">
+            @Html.LabelFor(model => model.Dalia, "DALIA:", htmlAttributes: new { @class = "control-label col-md-5 text-right" })
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.Dalia, new { htmlAttributes = new { @class = "form-control currency" } })
+                @Html.ValidationMessageFor(model => model.Dalia, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row align-items-end">
+            @Html.LabelFor(model => model.Azalea, "AZALEA:", htmlAttributes: new { @class = "control-label col-md-5 text-right" })
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.Azalea, new { htmlAttributes = new { @class = "form-control currency" } })
+                @Html.ValidationMessageFor(model => model.Azalea, "", new { @class = "text-danger" })
+            </div>
+        </div>      
+
+        <div class="form-group row align-items-end">
+            @Html.LabelFor(model => model.Iris, "IRIS:", htmlAttributes: new { @class = "control-label col-md-5 text-right" })
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.Iris, new { htmlAttributes = new { @class = "form-control currency" } })
+                @Html.ValidationMessageFor(model => model.Iris, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row align-items-end">
+            @Html.LabelFor(model => model.Orquidea, "ORQUIDEA:", htmlAttributes: new { @class = "control-label col-md-5 text-right" })
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.Orquidea, new { htmlAttributes = new { @class = "form-control currency" } })
+                @Html.ValidationMessageFor(model => model.Orquidea, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group row align-items-end">
+            @Html.LabelFor(model => model.Bugambilia, "BUGAMBILIA:", htmlAttributes: new { @class = "control-label col-md-5 text-right" })
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.Bugambilia, new { htmlAttributes = new { @class = "form-control currency" } })
+                @Html.ValidationMessageFor(model => model.Bugambilia, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="form-group row align-items-end">
+            @Html.LabelFor(model => model.PrecioM2Excedente, "Precio m2 excedente:", htmlAttributes: new { @class = "control-label col-md-3 text-right" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.PrecioM2Excedente, new { htmlAttributes = new { @class = "form-control currency" } })
+                @Html.ValidationMessageFor(model => model.PrecioM2Excedente, "", new { @class = "text-danger" })
+            </div>
+            @Html.LabelFor(model => model.MontoEsquina, "Monto esquina:", htmlAttributes: new { @class = "control-label col-md-3 text-right" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.MontoEsquina, new { htmlAttributes = new { @class = "form-control currency" } })
+                @Html.ValidationMessageFor(model => model.MontoEsquina, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="form-group">
+            <div class="ml-auto col-md-3">
+                <input type="submit" value="Guardar" class="btn btn-primary" /> |
+                @Html.ActionLink("Atras", "Index", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/etapas/js")
+
+</div>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@

@@ -2,8 +2,13 @@
     $('.form-control').change(function (event) {
         if (event.target.id === 'LoteId' || event.target.id === 'PrototipoId')
         {
+            //var lote = $('#LoteId option:selected').text();
+            //console.log($('#LoteId option:selected').text());
             var lote = $('#LoteId').val();
+            console.log($(this).val());
             var prototipo = $('#PrototipoId').val();
+            
+            
             if ((lote !== '') && (prototipo !== ''))
             {
                 show();
