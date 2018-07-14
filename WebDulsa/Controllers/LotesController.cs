@@ -110,7 +110,7 @@ namespace WebDulsa.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Creedit([Bind(Include = "Id,Descripcion,Manzana,M2Terreno,ExcedenteM2,Esquina")] Lote lote)
         {
-            if (Id == null)
+            if (lote.Id == null)
             {
                 // insert new record
                 if (ModelState.IsValid)
