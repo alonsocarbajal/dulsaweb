@@ -204,6 +204,7 @@
     <Compile Include="Controllers\LotesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PagosController.cs" />
+    <Compile Include="Controllers\PaqueteObrasController.cs" />
     <Compile Include="Controllers\PrototiposController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -675,6 +676,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Pagos\pago.js" />
+    <Content Include="Scripts\Paqueteobra\paqueteobra.js" />
     <Content Include="Scripts\Prototipos\prototipos.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -747,6 +749,11 @@
     <Content Include="Views\Pagos\Details.cshtml" />
     <Content Include="Views\Pagos\Edit.cshtml" />
     <Content Include="Views\Pagos\Index.cshtml" />
+    <Content Include="Views\PaqueteObras\Create.cshtml" />
+    <Content Include="Views\PaqueteObras\Delete.cshtml" />
+    <Content Include="Views\PaqueteObras\Details.cshtml" />
+    <Content Include="Views\PaqueteObras\Edit.cshtml" />
+    <Content Include="Views\PaqueteObras\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

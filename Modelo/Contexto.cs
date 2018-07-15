@@ -23,5 +23,7 @@ namespace Modelo
         public virtual DbSet<ListaVenta> ListaVentas { get; set; }
         public virtual DbSet<Pago> Pagos { get; set; }
         public virtual DbSet<Lote> Lotes { get; set; }
+
+        public System.Data.Entity.DbSet<Modelo.PaqueteObra> PaqueteObras { get; set; }
     }
 }
