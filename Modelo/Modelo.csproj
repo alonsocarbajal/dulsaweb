@@ -56,6 +56,7 @@
     <Compile Include="ListaVenta.cs" />
     <Compile Include="Lote.cs" />
     <Compile Include="Pago.cs" />
+    <Compile Include="PaqueteObra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Prototipo.cs" />
   </ItemGroup>

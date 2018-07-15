@@ -1,0 +1,114 @@
+﻿@model Modelo.PaqueteObra
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@*<h2>Create</h2>*@
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="invoice p-3 mb-3">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <br />
+        <div class="form-group row align-items-end">
+            <div class="col-md-4">
+            </div>
+            @Html.LabelFor(model => model.Fecha, "Fecha:", htmlAttributes: new { @class = "control-label col-md-1 text-right" })
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="form-group row align-items-end">
+
+            @Html.LabelFor(model => model.Concepto, "Concepto:", htmlAttributes: new { @class = "control-label col-md-1 text-right" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Concepto, "Concepto:", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Concepto, "", new { @class = "text-danger" })
+            </div>
+            <div>
+            </div>
+            <div class="col-md-1 align-content-center">
+                @Html.RadioButtonFor(Model => Model.Tipo, "M2", new { @class = "tipo", id = "M2" })
+                M2
+            </div>
+            <div class="col-md-1">
+                @Html.RadioButtonFor(Model => Model.Tipo, "PIEZA", new { @class = "tipo", id = "PIEZA" })
+                PIEZA
+            </div>
+            @Html.LabelFor(model => model.Precio, "Precio:", htmlAttributes: new { @class = "control-label col-md-1 text-right" })
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "form-control currency" } })
+                @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="ml-auto col-md-3">
+            <input type="submit" value="Guardar" class="btn btn-primary" /> &nbsp;
+            @Html.ActionLink("Atras", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    </div>
+
+
+
+
+
+
+
+    @*<div class="form-horizontal">
+            <h4>PaqueteObra</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Fecha, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Concepto, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Concepto, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Concepto, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Tipo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Tipo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Tipo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Precio, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>*@
+}
+
+@Scripts.Render("~/paqueteobra/js")
+
+

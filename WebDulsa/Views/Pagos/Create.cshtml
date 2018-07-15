@@ -127,8 +127,8 @@
             <div class="from-group row align-items-end">
                 @Html.LabelFor(model => model.MontoEnganche, "Monto de enganche:", htmlAttributes: new { @class = "control-label col-md-5 text-right" })
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.MontoEnganche, new { htmlAttributes = new { @class = "form-control currency" } })
-                    @Html.ValidationMessageFor(model => model.MontoEnganche, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.TotalEnganche, new { htmlAttributes = new { @class = "form-control currency" } })
+                    @Html.ValidationMessageFor(model => model.TotalEnganche, "", new { @class = "text-danger" })
                 </div>
             </div>
             <br />
@@ -202,7 +202,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="invoice p-3 mb-3">
             <div class="from-group row align-items-center">
                 @Html.LabelFor(model => model.Cambios, "Cambios:", htmlAttributes: new { @class = "control-label col-md-3 text-right" })

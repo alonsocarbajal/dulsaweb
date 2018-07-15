@@ -39,6 +39,8 @@ namespace WebDulsa
                       "~/Scripts/Etapas/etapa.js"));
             bundles.Add(new ScriptBundle("~/pagos/js").Include(
                       "~/Scripts/pagos/pago.js"));
+            bundles.Add(new ScriptBundle("~/paqueteobra/js").Include(
+                      "~/Scripts/paqueteobra/paqueteobra.js"));
             bundles.Add(new ScriptBundle("~/adminlte/js").Include(
                       "~/Content/vendor/jquery/jquery.min.js",
                       "~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js",
