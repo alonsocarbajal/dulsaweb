@@ -34,41 +34,37 @@ namespace WebDulsa.Controllers
             return View(db.Etapas.ToList());
         }
 
-        public JsonResult GetLotesDisponibles()
+        public JsonResult GetLotesDisponibles(string descripcion)
         {
+            Etapa etapa = null;
+            if (!string.IsNullOrEmpty(descripcion))
+            {
+                etapa = db.Etapas.FirstOrDefault(e => e.Descripcion.Equals(descripcion));
+            }
             IEnumerable<int> lotesDisponibles = new List<int>();
-            ICollection<string> disponibles = db.Etapas.Select(e => e.Lotes).ToList();
-            foreach(var disponible in disponibles)
+            ICollection<string> lotesOcupados = db.Etapas.Select(e => e.Lotes).ToList();
+            foreach (var loteOcupado in lotesOcupados)
             {
-                ICollection<int> lotesDisp= JsonConvert.DeserializeObject<ICollection<int>>(disponible);
-                lotesDisponibles= lotesDisponibles.Concat(lotesDisp);
+                ICollection<int> lotesDisp = JsonConvert.DeserializeObject<ICollection<int>>(loteOcupado);
+                lotesDisponibles = lotesDisponibles.Concat(lotesDisp);
             }
-            return Json(lotesDisponibles, JsonRequestBehavior.AllowGet);
+            var lotesSolicitud = etapa != null ? JsonConvert.DeserializeObject<ICollection<int>>(etapa.Lotes) : new List<int>();
+            var lotesVendidos = db.Pagos.Include(p=>p.Lote).Select(p => p.Lote);
+            return Json(new { lotesDisponibles, lotesSolicitud, lotesVendidos }, JsonRequestBehavior.AllowGet);
         }
-
-        // GET: Etapas/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Etapa etapa = db.Etapas.Find(id);
-            if (etapa == null)
-            {
-                return HttpNotFound();
-            }
-            return View(etapa);
-        }
-
-
-        
-
 
         // GET: Etapas/Create
-        public ActionResult Create()
+        public ActionResult Create(string id = null)
         {
-            return View();
+            if (id == null)
+                return View();
+            else
+            {
+                var etapa = db.Etapas.Find(int.Parse(id));
+                if (etapa == null)
+                    return HttpNotFound();
+                return View(etapa);//lote);
+            }
         }
 
         // POST: Etapas/Create
@@ -88,40 +84,19 @@ namespace WebDulsa.Controllers
                         lotesDisp.Add(int.Parse(lote));
                     etapa.Lotes = JsonConvert.SerializeObject(lotesDisp);
                 }
-                db.Etapas.Add(etapa);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                //Por aqui agarra cuando es un lote nuevo
+                //Puesto que el id viene Vacio y se le crea uno nuevo
+                if (etapa.Id == 0)
+                {
+                    db.Etapas.Add(etapa);
+                    db.SaveChanges();
+                }
+                else
+                {
 
-            return View(etapa);
-        }
-
-        // GET: Etapas/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Etapa etapa = db.Etapas.Find(id);
-            if (etapa == null)
-            {
-                return HttpNotFound();
-            }
-            return View(etapa);
-        }
-
-        // POST: Etapas/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Descripcion,Lote1,Lote2,Lote3,Lote4,Lote5,Lote6,Lote7,Lote8,Lote9,Lote10,Lote11,Lote12,Lote13,Lote14,Lote15,Lote16,Lote17,Lote18,Lote19,Lote20,Lote21,Lote22,Lote23,Lote24,Dalia,Azalea,Iris,Orquidea,Bugambilia,PrecioM2Excedente,MontoEsquina")] Etapa etapa)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(etapa).State = EntityState.Modified;
-                db.SaveChanges();
+                    db.Entry(etapa).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
                 return RedirectToAction("Index");
             }
             return View(etapa);

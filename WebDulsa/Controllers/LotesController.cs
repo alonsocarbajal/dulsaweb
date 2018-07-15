@@ -20,25 +20,18 @@ namespace WebDulsa.Controllers
             return View(db.Lotes.ToList());
         }
 
-        // GET: Lotes/Details/5
-        public ActionResult Details(int? id)
+        // GET: Lotes/Create
+        public ActionResult Create(string id = null)
         {
             if (id == null)
+                return View();
+            else
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                var lote = db.Lotes.Find(int.Parse(id));
+                if (lote == null)
+                    return HttpNotFound();
+                return View(lote);//lote);
             }
-            Lote lote = db.Lotes.Find(id);
-            if (lote == null)
-            {
-                return HttpNotFound();
-            }
-            return View(lote);
-        }
-
-        // GET: Lotes/Create
-        public ActionResult Create()
-        {
-            return View();
         }
 
         // POST: Lotes/Create
@@ -50,90 +43,53 @@ namespace WebDulsa.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Lotes.Add(lote);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(lote);
-        }
-
-        // GET: Lotes/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Lote lote = db.Lotes.Find(id);
-            if (lote == null)
-            {
-                return HttpNotFound();
-            }
-            return View(lote);
-        }
-
-        // POST: Lotes/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Descripcion,Manzana,M2Terreno,ExcedenteM2,Esquina")] Lote lote)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(lote).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(lote);
-        }
-
-        public ActionResult Creedit(int? id = null)
-        {
-            if (id == null)
-            {
-                return View();
-            }
-            else
-            {
-                Lote lote = db.Lotes.Find(id);
-                if (lote == null)
-                {
-                    return HttpNotFound();
-                }
-                return View(lote);
-            }
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Creedit([Bind(Include = "Id,Descripcion,Manzana,M2Terreno,ExcedenteM2,Esquina")] Lote lote)
-        {
-            if (Id == null)
-            {
-                // insert new record
-                if (ModelState.IsValid)
+                //Por aqui agarra cuando es un lote nuevo
+                //Puesto que el id viene Vacio y se le crea uno nuevo
+                if (lote.Id == 0)
                 {
                     db.Lotes.Add(lote);
                     db.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-
-                return View(lote);
-            }
-            else
-            {
-                // update record
-                if (ModelState.IsValid)
+                } else
                 {
                     db.Entry(lote).State = EntityState.Modified;
                     db.SaveChanges();
-                    return RedirectToAction("Index");
                 }
-                return View(lote);
+                //db.Lotes.Add(lote);
+                //db.SaveChanges();
+                return RedirectToAction("Index");
             }
+
+            return View(lote);
         }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Creedit([Bind(Include = "Id,Descripcion,Manzana,M2Terreno,ExcedenteM2,Esquina")] Lote lote)
+        //{
+        //    if (Id == null)
+        //    {
+        //        // insert new record
+        //        if (ModelState.IsValid)
+        //        {
+        //            db.Lotes.Add(lote);
+        //            db.SaveChanges();
+        //            return RedirectToAction("Index");
+        //        }
+
+        //        return View(lote);
+        //    }
+        //    else
+        //    {
+        //        // update record
+        //        if (ModelState.IsValid)
+        //        {
+        //            db.Entry(lote).State = EntityState.Modified;
+        //            db.SaveChanges();
+        //            return RedirectToAction("Index");
+        //        }
+        //        return View(lote);
+        //    }
+        //}
 
 
         // GET: Lotes/Delete/5

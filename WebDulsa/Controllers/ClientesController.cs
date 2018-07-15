@@ -19,22 +19,7 @@ namespace WebDulsa.Controllers
         {
             return View(db.Clientes.ToList());
         }
-
-        // GET: Clientes/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Cliente cliente = db.Clientes.Find(id);
-            if (cliente == null)
-            {
-                return HttpNotFound();
-            }
-            return View(cliente);
-        }
-
+        
         // GET: Clientes/Create
         public ActionResult Create()
         {
@@ -59,37 +44,6 @@ namespace WebDulsa.Controllers
             }
             ViewBag.MiRegimen = ObtenerRegimen();
             ViewBag.MiNacionalidad = ObtenerNacionalidad();
-            return View(cliente);
-        }
-
-        // GET: Clientes/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Cliente cliente = db.Clientes.Find(id);
-            if (cliente == null)
-            {
-                return HttpNotFound();
-            }
-            return View(cliente);
-        }
-
-        // POST: Clientes/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nombre,Regimen,Nacionalidad,Ciudad,Colonia,Calle,Numero,TelefonoCasa,TelefonoCelular,TelefonoOficina,Email,Rfc,Curp,FechaNacimiento,LugarNacimiento,Empresa,Sueldo,Beneficiario,AqueSeDedica,EstadoCivil,Sexo,PropositoCompra,HabitaCasa,FuenteProspeccion,Referencia1,TelReferencia1,Referencia2,TelReferencia2,Referencia3,TelReferencia3,FormaPago")] Cliente cliente)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(cliente).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
             return View(cliente);
         }
 

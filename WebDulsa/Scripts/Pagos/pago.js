@@ -2,13 +2,9 @@
     $('.form-control').change(function (event) {
         if (event.target.id === 'LoteId' || event.target.id === 'PrototipoId')
         {
-            //var lote = $('#LoteId option:selected').text();
-            //console.log($('#LoteId option:selected').text());
             var lote = $('#LoteId').val();
             console.log($(this).val());
             var prototipo = $('#PrototipoId').val();
-            
-            
             if ((lote !== '') && (prototipo !== ''))
             {
                 show();
@@ -17,21 +13,21 @@
         }
 
         function getLote(lote, prototipo) {
-            var serviceURL = 'GetEtapa?loteId=' + lote;
+            var serviceURL = window.location.origin + '/pagos/GetEtapa?loteId=' + lote;
             $.ajax({
                 type: "Get",
                 url: serviceURL,
                 data: param = "",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                success: successFunc,
-                error: errorFunc
+                success: function (datos) {
+                    asignarValores(datos);
+                }, error: function (error) {
+                    hide();
+                }
             });
         }
-        
-        function successFunc(data, status) {
-            asignarValores(data);
-        }
+
         function asignarValores(dato) {
             $('#excedente').html(dato.mtsExcedente ?'Si' : 'No');
             $('#mts-excedente').html(dato.mtsExcedente ? dato.mtsExcedente: 0);
@@ -64,17 +60,12 @@
                 data: param = "",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                success: successPrototipo,
-                error: errorFunc
+                success: successPrototipo
             });
         }
         function successPrototipo(dato, status) {
             $('#mts-construccion').html(dato.MetrosCuadrado);
             hide();
-        }
-
-        function errorFunc() {
-            alert('Ocurrio un error al recuperar información');
         }
     })
     $(".currency").maskMoney({

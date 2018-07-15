@@ -19,22 +19,7 @@ namespace WebDulsa.Controllers
         {
             return View(db.Prototipos.ToList());
         }
-
-        // GET: Prototipos/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Prototipo prototipo = db.Prototipos.Find(id);
-            if (prototipo == null)
-            {
-                return HttpNotFound();
-            }
-            return View(prototipo);
-        }
-
+        
         // GET: Prototipos/Create
         public ActionResult Create()
         {
@@ -56,37 +41,6 @@ namespace WebDulsa.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(prototipo);
-        }
-
-        // GET: Prototipos/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Prototipo prototipo = db.Prototipos.Find(id);
-            if (prototipo == null)
-            {
-                return HttpNotFound();
-            }
-            return View(prototipo);
-        }
-
-        // POST: Prototipos/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Descripcion,MetrosCuadrado,Version")] Prototipo prototipo)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(prototipo).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
             return View(prototipo);
         }
 

@@ -29,6 +29,8 @@ namespace WebDulsa.Controllers
         public JsonResult GetEtapa(int loteId)
         {
             db.Configuration.ProxyCreationEnabled = false;
+            var lote =db.Lotes.Find(loteId);
+            dynamic resultado = null;
             var mtsExcedente = db.Lotes.FirstOrDefault(l => l.Id == loteId) != null ? db.Lotes.FirstOrDefault(l => l.Id == loteId).ExcedenteM2 : 0;
             var lista = db.Etapas.ToList().Select(x => new
             {
@@ -43,7 +45,16 @@ namespace WebDulsa.Controllers
                 Lotes = JsonConvert.DeserializeObject<IEnumerable<int>>(x.Lotes),
                 mtsExcedente=mtsExcedente
             });
-            var resultado = lista.FirstOrDefault(e => e.Lotes.Where(l => l == loteId).Any());
+            foreach (var item in lista)
+            {
+                foreach(var t in item.Lotes)
+                {
+                   if( t.ToString().Equals(lote.Descripcion))
+                   {
+                        resultado = item;
+                   }
+                }
+            }
             return Json(resultado, JsonRequestBehavior.AllowGet);
         }
 
