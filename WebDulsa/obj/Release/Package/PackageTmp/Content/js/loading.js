@@ -1,5 +1,4 @@
 ﻿function show() {
-    console.log('aaa');
     $('body').waitMe({
         effect: 'rotation',
         text: '',

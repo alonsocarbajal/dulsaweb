@@ -35,10 +35,13 @@ namespace Modelo
         public string Email { get; set; }
         public string Rfc { get; set; }
         public string Curp { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime FechaNacimiento { get; set; }
         public string LugarNacimiento { get; set; }
         public string Empresa { get; set; }
-        public Nullable<Decimal> Sueldo { get; set; }
+        [Range(1, double.MaxValue, ErrorMessage = "Introduzca un valor valido")]
+        public decimal Sueldo { get; set; }
         public string Beneficiario { get; set; }
         [Required]
         public string AqueSeDedica { get; set; }

@@ -21,11 +21,24 @@ namespace WebDulsa.Controllers
         }
         
         // GET: Clientes/Create
-        public ActionResult Create()
+        public ActionResult Create(string id = null)
         {
-            ViewBag.MiRegimen = ObtenerRegimen();
-            ViewBag.MiNacionalidad   = ObtenerNacionalidad();
-            return View();
+            if (id == null)
+            {
+                ViewBag.MiRegimen = ObtenerRegimen();
+                ViewBag.MiNacionalidad = ObtenerNacionalidad();
+                return View();
+            }
+            else
+            {
+                var cliente = db.Clientes.Find(int.Parse(id));
+                if (cliente == null)
+                    return HttpNotFound();
+                ViewBag.MiRegimen = ObtenerRegimen();
+                ViewBag.MiNacionalidad = ObtenerNacionalidad();
+                return View(cliente);
+            }
+            
         }
 
         // POST: Clientes/Create
@@ -37,9 +50,16 @@ namespace WebDulsa.Controllers
         {
             if (ModelState.IsValid)
             {
-
-                db.Clientes.Add(cliente);
-                db.SaveChanges();
+                if (cliente.Id == 0)
+                {
+                    db.Clientes.Add(cliente);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    db.Entry(cliente).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
                 return RedirectToAction("Index");
             }
             ViewBag.MiRegimen = ObtenerRegimen();

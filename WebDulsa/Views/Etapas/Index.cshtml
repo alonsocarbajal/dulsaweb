@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
+                Etapa
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Dalia)
@@ -31,10 +31,12 @@
                 @Html.DisplayNameFor(model => model.Bugambilia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PrecioM2Excedente)
+                $ X m2 Excedente
+                @*@Html.DisplayNameFor(model => model.PrecioM2Excedente)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MontoEsquina)
+                $ X Esquina
+                @*@Html.DisplayNameFor(model => model.MontoEsquina)*@
             </th>
             <th></th>
         </tr>
@@ -68,8 +70,8 @@
                 @Html.DisplayFor(modelItem => item.MontoEsquina)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Create", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink(" ", "Create", new { id = item.Id }, new { @class = "fa fa-edit" }) 
+                @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
             </td>
         </tr>
         }

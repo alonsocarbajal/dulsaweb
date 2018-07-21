@@ -31,7 +31,7 @@ namespace WebDulsa.Controllers
             db.Configuration.ProxyCreationEnabled = false;
             var lote =db.Lotes.Find(loteId);
             dynamic resultado = null;
-            var mtsExcedente = db.Lotes.FirstOrDefault(l => l.Id == loteId) != null ? db.Lotes.FirstOrDefault(l => l.Id == loteId).ExcedenteM2 : 0;
+            //var lote = db.Lotes.FirstOrDefault(l => l.Id == loteId); //!= null ? db.Lotes.FirstOrDefault(l => l.Id == loteId).ExcedenteM2 : 0;
             var lista = db.Etapas.ToList().Select(x => new
             {
                 x.Id,
@@ -42,8 +42,9 @@ namespace WebDulsa.Controllers
                 x.PrecioM2Excedente,
                 x.Orquidea,
                 x.MontoEsquina,
+                EsEsquina = lote != null ? lote.Esquina : false,
                 Lotes = JsonConvert.DeserializeObject<IEnumerable<int>>(x.Lotes),
-                mtsExcedente=mtsExcedente
+                MtsExcedente=lote !=null ? lote.ExcedenteM2: 0
             });
             foreach (var item in lista)
             {

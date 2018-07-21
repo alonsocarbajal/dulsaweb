@@ -1,4 +1,7 @@
 ﻿$(document).ready(() => {
+    //$("#precio-total").maskMoney({
+    //    formatOnBlur: true, selectAllOnFocus: false, selectAllOnFocus: true, reverse: true, prefix: '$'
+    //});
     $('.form-control').change(function (event) {
         if (event.target.id === 'LoteId' || event.target.id === 'PrototipoId')
         {
@@ -29,10 +32,15 @@
         }
 
         function asignarValores(dato) {
-            $('#excedente').html(dato.mtsExcedente ?'Si' : 'No');
-            $('#mts-excedente').html(dato.mtsExcedente ? dato.mtsExcedente: 0);
+            $('#excedente').html(dato.MtsExcedente ?'Si' : 'No');
+            $('#mts-excedente').html(dato.MtsExcedente ? dato.MtsExcedente : 0);
+
+            
+
             var lote = $('#LoteId').val();
             var prototipo = $('#PrototipoId').val();
+            var precioxm2 = 0;
+            var mtexcedente = 0;
             var valor = 0;
             switch (prototipo) {
                 case 'DALIA':
@@ -51,7 +59,24 @@
                     valor = dato.Bugambilia;
                     break;
             }
-            $('#precio-total').html(valor);
+
+            
+            
+            var precioxm2 = dato.PrecioM2Excedente;
+            console.log(precioxm2);
+            var mtexcedente = dato.MtsExcedente;
+            console.log(mtexcedente);
+            console.log(valor);
+            valor += dato.EsEsquina ? dato.MontoEsquina : 0;
+            var total = (precioxm2 * mtexcedente) + valor;
+            console.log(total);
+            
+            //alert(new Intl.NumberFormat().format(total));
+            $('#precio-total').html(new Intl.NumberFormat().format(total));
+            //$('#precio-total').html(total);
+            //$("#precio-total").maskMoney({
+            //    formatOnBlur: true, selectAllOnFocus: false, selectAllOnFocus: true, reverse: true, prefix: '$'
+            //});
             $('#casa-modelo').html(prototipo);
             serviceURL = 'GetPrototipo?descripcion=' + prototipo;
             $.ajax({

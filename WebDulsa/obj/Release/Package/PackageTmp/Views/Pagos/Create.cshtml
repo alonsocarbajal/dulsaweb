@@ -76,14 +76,14 @@
                                 <p class="text-center"><strong>m<sup>2</sup> de construcción:</strong><span id="mts-construccion"></span></p>
                                 <p class="text-center"><strong>Excedente:</strong><span id="excedente"></span></p>
                                 <p class="text-center"><strong>m<sup>2</sup> de excedente:</strong><span id="mts-excedente"></span></p>
-                                <p class="text-center"><strong>Precio total:</strong>$ <span id="precio-total"></span></p>
+                                <p class="text-center"><strong>Precio total:</strong><h2>$<span id="precio-total"></span></h2></p>
                             </div>
                             <!-- /.card-body -->
                         </div>
 
                     </div>
                 </div>
-            </div>
+            </div>  
         </div>
 
         <div class="invoice p-3 mb-3">
@@ -127,8 +127,8 @@
             <div class="from-group row align-items-end">
                 @Html.LabelFor(model => model.MontoEnganche, "Monto de enganche:", htmlAttributes: new { @class = "control-label col-md-5 text-right" })
                 <div class="col-md-3">
-                    @Html.EditorFor(model => model.MontoEnganche, new { htmlAttributes = new { @class = "form-control currency" } })
-                    @Html.ValidationMessageFor(model => model.MontoEnganche, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.TotalEnganche, new { htmlAttributes = new { @class = "form-control currency" } })
+                    @Html.ValidationMessageFor(model => model.TotalEnganche, "", new { @class = "text-danger" })
                 </div>
             </div>
             <br />
@@ -202,7 +202,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="invoice p-3 mb-3">
             <div class="from-group row align-items-center">
                 @Html.LabelFor(model => model.Cambios, "Cambios:", htmlAttributes: new { @class = "control-label col-md-3 text-right" })

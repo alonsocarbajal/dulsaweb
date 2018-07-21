@@ -36,9 +36,17 @@ namespace WebDulsa.Controllers
         }
 
         // GET: PaqueteObras/Create
-        public ActionResult Create()
+        public ActionResult Create(string id = null)
         {
-            return View();
+            if (id == null)
+               return View();
+            else
+            {
+                var paquete = db.PaqueteObras.Find(int.Parse(id));
+                if (paquete == null)
+                    return HttpNotFound();
+                return View(paquete);//lote);
+            }
         }
 
         // POST: PaqueteObras/Create
@@ -50,8 +58,17 @@ namespace WebDulsa.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.PaqueteObras.Add(paqueteObra);
-                db.SaveChanges();
+                if (paqueteObra.Id == 0)
+                {
+                    db.PaqueteObras.Add(paqueteObra);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    db.Entry(paqueteObra).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+                
                 return RedirectToAction("Index");
             }
 

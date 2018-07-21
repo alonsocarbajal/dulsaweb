@@ -1,14 +1,13 @@
 ﻿$(document).ready(() => {
+    //$("#precio-total").maskMoney({
+    //    formatOnBlur: true, selectAllOnFocus: false, selectAllOnFocus: true, reverse: true, prefix: '$'
+    //});
     $('.form-control').change(function (event) {
         if (event.target.id === 'LoteId' || event.target.id === 'PrototipoId')
         {
-            //var lote = $('#LoteId option:selected').text();
-            //console.log($('#LoteId option:selected').text());
             var lote = $('#LoteId').val();
             console.log($(this).val());
             var prototipo = $('#PrototipoId').val();
-            
-            
             if ((lote !== '') && (prototipo !== ''))
             {
                 show();
@@ -17,26 +16,31 @@
         }
 
         function getLote(lote, prototipo) {
-            var serviceURL = 'GetEtapa?loteId=' + lote;
+            var serviceURL = window.location.origin + '/pagos/GetEtapa?loteId=' + lote;
             $.ajax({
                 type: "Get",
                 url: serviceURL,
                 data: param = "",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                success: successFunc,
-                error: errorFunc
+                success: function (datos) {
+                    asignarValores(datos);
+                }, error: function (error) {
+                    hide();
+                }
             });
         }
-        
-        function successFunc(data, status) {
-            asignarValores(data);
-        }
+
         function asignarValores(dato) {
-            $('#excedente').html(dato.mtsExcedente ?'Si' : 'No');
-            $('#mts-excedente').html(dato.mtsExcedente ? dato.mtsExcedente: 0);
+            $('#excedente').html(dato.MtsExcedente ?'Si' : 'No');
+            $('#mts-excedente').html(dato.MtsExcedente ? dato.MtsExcedente : 0);
+
+            
+
             var lote = $('#LoteId').val();
             var prototipo = $('#PrototipoId').val();
+            var precioxm2 = 0;
+            var mtexcedente = 0;
             var valor = 0;
             switch (prototipo) {
                 case 'DALIA':
@@ -55,7 +59,24 @@
                     valor = dato.Bugambilia;
                     break;
             }
-            $('#precio-total').html(valor);
+
+            
+            
+            var precioxm2 = dato.PrecioM2Excedente;
+            console.log(precioxm2);
+            var mtexcedente = dato.MtsExcedente;
+            console.log(mtexcedente);
+            console.log(valor);
+            valor += dato.EsEsquina ? dato.MontoEsquina : 0;
+            var total = (precioxm2 * mtexcedente) + valor;
+            console.log(total);
+            
+            //alert(new Intl.NumberFormat().format(total));
+            $('#precio-total').html(new Intl.NumberFormat().format(total));
+            //$('#precio-total').html(total);
+            //$("#precio-total").maskMoney({
+            //    formatOnBlur: true, selectAllOnFocus: false, selectAllOnFocus: true, reverse: true, prefix: '$'
+            //});
             $('#casa-modelo').html(prototipo);
             serviceURL = 'GetPrototipo?descripcion=' + prototipo;
             $.ajax({
@@ -64,17 +85,12 @@
                 data: param = "",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                success: successPrototipo,
-                error: errorFunc
+                success: successPrototipo
             });
         }
         function successPrototipo(dato, status) {
             $('#mts-construccion').html(dato.MetrosCuadrado);
             hide();
-        }
-
-        function errorFunc() {
-            alert('Ocurrio un error al recuperar información');
         }
     })
     $(".currency").maskMoney({

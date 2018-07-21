@@ -23,19 +23,26 @@ namespace Modelo
         public string Descripcion { get; set; }
         public string Lotes { get; set; }
         [Range(1, double.MaxValue, ErrorMessage = "Introduzca un valor valido")]
+        [DisplayFormat(DataFormatString = "{0:n}")]
         public decimal Dalia { get; set; }
         [Range(1, double.MaxValue, ErrorMessage = "Introduzca un valor valido")]
+        [DisplayFormat(DataFormatString = "{0:n}")]
         public decimal Azalea { get; set; }
         [Range(1, double.MaxValue, ErrorMessage = "Introduzca un valor valido")]
+        [DisplayFormat(DataFormatString = "{0:n}")]
         public decimal Iris { get; set; }
 
         [Range(1, double.MaxValue, ErrorMessage = "Introduzca un valor valido")]
+        [DisplayFormat(DataFormatString = "{0:n}")]
         public decimal Orquidea { get; set; }
         [Range(1, double.MaxValue, ErrorMessage = "Introduzca un valor valido")]
+        [DisplayFormat(DataFormatString = "{0:n}")]
         public decimal Bugambilia { get; set; }
         [Range(1, double.MaxValue, ErrorMessage = "Introduzca un valor valido")]
+        [DisplayFormat(DataFormatString = "{0:n}")]
         public decimal PrecioM2Excedente { get; set; }
         [Range(1, double.MaxValue, ErrorMessage = "Introduzca un valor valido")]
+        [DisplayFormat(DataFormatString = "{0:n}")]
         public decimal MontoEsquina { get; set; }
     }
 }

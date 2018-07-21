@@ -22,13 +22,10 @@
             event.preventDefault();
         }
         $('form').append('<input type="hidden" id="Lotes" name="Lotes" value="' + (listaSeleccionado) + '"/>');
-       //$('Iris').val($('.form-control').maskMoney('unmasked')[0]);
-       //$('Iris').val($('.form-control').maskMoney('unmasked')[0]);
-       //$('Iris').val($('.form-control').maskMoney('unmasked')[0]);
-       // $('Iris').val($('.form-control').maskMoney('unmasked')[0]);
-        //event.preventDefault();
+
     });
-    var serviceURL = 'GetlotesDisponibles';
+    //console.log($('#Descripcion').val());
+    var serviceURL = window.location.origin + '/etapas/GetlotesDisponibles?descripcion=' + $('#Descripcion').val();
     $.ajax({
         type: "Get",
         url: serviceURL,
@@ -40,23 +37,26 @@
     });
 
     function successFunc(data, status) {
+        console.log(data);
         asignarCheckbox(data);
     }
 
     function errorFunc() {
         asignarCheckbox(undefined);
     }
-    function asignarCheckbox(lista) {
+    function asignarCheckbox(datos) {
         var template = '<div class="form-group row align-items-center"><div class="col-md-2"></div>';
         for (var i = 0; i < 84; i++) {
             if (i % 12 == 0) {
                 template += '</div>';
                 template += '<div class="form-group row align-items-center">';
             }
-            var isDisable = lista.find(l => l == (i+1)) ? 'disabled' : '';
+            var isDisable = datos.lotesDisponibles.find(l => l == (i + 1)) && !datos.lotesSolicitud.find(l => l == (i + 1)) ? 'disabled' : '';
+            isDisable = datos.lotesVendidos.find(lV => lv.Descripcion == (i + 1)) ? 'disabled' : isDisable;
+            var checked = datos.lotesDisponibles.find(l => l == (i + 1))  ? 'checked' : '';
             template += '<div class="col-md-2"><div class="form-check-inline ' +isDisable +'">';
             template += '<label class="form-check-label">';
-            template += '<input type="checkbox" id="chklote' + (i+1) + '" value="'+ (i+1) +'" class="form-check-input" ' + isDisable + '> Lote ' + (i + 1) + '</label>';
+            template += '<input type="checkbox" id="chklote' + (i+1) + '" value="'+ (i+1) +'" '+ checked +' class="form-check-input" ' + isDisable + '> Lote ' + (i + 1) + '</label>';
             template += '</div></div>';
         }
         template += '</div >';
