@@ -8,8 +8,10 @@ using System.Web;
 using System.Web.Mvc;
 using Modelo;
 
+
 namespace WebDulsa.Controllers
 {
+    [Authorize]
     public class AsesoresController : Controller
     {
         private Contexto db = new Contexto();

@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 
 namespace WebDulsa.Controllers
 {
+    [Authorize]
     public class PagosController : Controller
     {
         private Contexto db = new Contexto();
