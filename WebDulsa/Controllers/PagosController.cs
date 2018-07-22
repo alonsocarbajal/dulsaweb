@@ -67,6 +67,14 @@ namespace WebDulsa.Controllers
             var prototipo= db.Prototipos.Where(p => p.Descripcion.Equals(descripcion)).OrderByDescending(p => p.Version).FirstOrDefault();
             return Json(prototipo, JsonRequestBehavior.AllowGet);
         }
+        public JsonResult GetPaqueteObras(string descripcion)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            //if (string.IsNullOrEmpty(descripcion))
+            //    return Json(0, JsonRequestBehavior.AllowGet);
+            var paquetes = db.PaqueteObras.ToList();
+            return Json(paquetes, JsonRequestBehavior.AllowGet);
+        }
         public JsonResult GetPrototipoId(string descripcion)
         {
             db.Configuration.ProxyCreationEnabled = false;
@@ -129,19 +137,19 @@ namespace WebDulsa.Controllers
         // GET: Pagoes/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            id =id?? 0;
             Pago pago = db.Pagos.Find(id);
             if (pago == null)
             {
-                return HttpNotFound();
+                pago = new Pago();
             }
             ViewBag.AsesorId = new SelectList(db.Asesores, "Id", "Nombre", pago.AsesorId);
             ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nombre", pago.ClienteId);
             ViewBag.LoteId = new SelectList(db.Lotes, "Id", "Descripcion", pago.LoteId);
             ViewBag.PrototipoId = new SelectList(db.Prototipos, "Id", "Descripcion", pago.PrototipoId);
+            ViewBag.MiBanco = ObtenerBanco();
+            ViewBag.MiCredito = ObtenerCredito();
+
             return View(pago);
         }
 

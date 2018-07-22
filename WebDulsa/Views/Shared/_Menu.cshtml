@@ -33,43 +33,49 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="@Url.Action("index", "Asesores" )" class="nav-link" >
+                            <a href="@Url.Action("index", "Asesores" )" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString()=="Asesores" ? "active": "")" >
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Asesores</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="@Url.Action("index", "Clientes" )" class="nav-link">
+                            <a href="@Url.Action("index", "Clientes" )" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString()=="Clientes" ? "active": "")">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Clientes</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="@Url.Action("index", "Lotes" )" class="nav-link">
+                            <a href="@Url.Action("index", "Lotes" )" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString()=="Lotes" ? "active": "")">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Lotes</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="@Url.Action("index", "Prototipos" )" class="nav-link">
+                            <a href="@Url.Action("index", "Prototipos" )" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString()=="Prototipos" ? "active": "")">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Prototipos</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="@Url.Action("index", "Etapas" )" class="nav-link">
+                            <a href="@Url.Action("index", "Etapas" )" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Etapas" ? "active" : "")">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Etapas</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="@Url.Action("index", "Pagos" )" class="nav-link">
+                            <a href="@Url.Action("index", "Pagos" )" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString()=="Pagos"  &&ViewContext.RouteData.Values["Action"].ToString()=="Index" ? "active": "")")">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Apartados</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="@Url.Action("index", "PaqueteObras" )" class="nav-link">
+                            <a href="@Url.Action("edit", "Pagos" )" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString()=="edit" ? "active": "")" )">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Captura Modificaciones</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("index", "PaqueteObras" )" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString()=="PaqueteObras" ? "active": "")">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Paquetes de obra</p>
                             </a>

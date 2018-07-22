@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Asesor.cs" />
+    <Compile Include="CambioLote.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Contexto.cs" />
     <Compile Include="Etapa.cs" />

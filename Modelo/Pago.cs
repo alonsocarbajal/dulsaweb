@@ -53,7 +53,6 @@ namespace Modelo
             }
         }
 
-
         //[ForeignKey("PrototipoId")]
         //public virtual Prototipo Prototipo { get; set; }
         [ForeignKey("ClienteId")]
@@ -62,5 +61,6 @@ namespace Modelo
         public virtual Asesor Asesor { get; set; }
         [ForeignKey("LoteId")]
         public virtual Lote Lote { get; set; }
+        public virtual ICollection<CambioLote> CambiosLote { get; set; }
     }
 }

@@ -676,6 +676,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Lotes\lote.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Pagos\captura-modificacion.js" />
     <Content Include="Scripts\Pagos\pago.js" />
     <Content Include="Scripts\Paqueteobra\paqueteobra.js" />
     <Content Include="Scripts\Prototipos\prototipos.js" />

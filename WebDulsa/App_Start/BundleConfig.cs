@@ -39,6 +39,8 @@ namespace WebDulsa
                       "~/Scripts/Etapas/etapa.js"));
             bundles.Add(new ScriptBundle("~/pagos/js").Include(
                       "~/Scripts/pagos/pago.js"));
+            bundles.Add(new ScriptBundle("~/modificacion-pagos/js").Include(
+          "~/Scripts/pagos/captura-modificacion.js"));
             bundles.Add(new ScriptBundle("~/paqueteobra/js").Include(
                       "~/Scripts/paqueteobra/paqueteobra.js"));
             bundles.Add(new ScriptBundle("~/adminlte/js").Include(
