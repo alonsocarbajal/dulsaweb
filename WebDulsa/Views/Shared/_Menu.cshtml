@@ -29,7 +29,7 @@
                      with font-awesome or any other icon font library -->
                 <li class="nav-item has-treeview menu-open">
                     <a href="#" class="nav-link active">
-                        <i class="nav-icon fa fa-dashboard"></i>
+                        <i class="nav-icon fa fa-wrench"></i>
                         <p>
                             Mantenimiento
                             <i class="right fa fa-angle-left"></i>
@@ -38,49 +38,49 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="@Url.Action("index", "Asesores" )" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString()=="Asesores" ? "active": "")" >
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="fa fa-user nav-icon"></i>
                                 <p>Asesores</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="@Url.Action("index", "Clientes" )" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString()=="Clientes" ? "active": "")">
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="fa fa-address-card-o nav-icon"></i>
                                 <p>Clientes</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="@Url.Action("index", "Lotes" )" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString()=="Lotes" ? "active": "")">
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="fa fa-map-marker nav-icon"></i>
                                 <p>Lotes</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="@Url.Action("index", "Prototipos" )" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString()=="Prototipos" ? "active": "")">
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="fa fa-home nav-icon"></i>
                                 <p>Prototipos</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="@Url.Action("index", "Etapas" )" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Etapas" ? "active" : "")">
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="fa fa-calendar nav-icon"></i>
                                 <p>Etapas</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="@Url.Action("index", "Pagos" )" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString()=="Pagos"  &&ViewContext.RouteData.Values["Action"].ToString()=="Index" ? "active": "")")">
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="fa fa-tags nav-icon"></i>
                                 <p>Apartados</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="@Url.Action("edit", "Pagos" )" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString()=="edit" ? "active": "")" )">
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="fa fa-exchange nav-icon"></i>
                                 <p>Captura Modificaciones</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="@Url.Action("index", "PaqueteObras" )" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString()=="PaqueteObras" ? "active": "")">
-                                <i class="fa fa-circle-o nav-icon"></i>
+                                <i class="fa fa-archive nav-icon"></i>
                                 <p>Paquetes de obra</p>
                             </a>
                         </li>

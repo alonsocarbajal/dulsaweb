@@ -10,6 +10,11 @@ namespace Modelo
     [Table("Pagos")]
     public  class Pago
     {
+        public Pago()
+        {
+            this.CambiosLote = new HashSet<CambioLote>();
+        }
+
         public int Id { get; set; }
         public int ClienteId { get; set; }
         public int LoteId { get; set; }
@@ -34,6 +39,8 @@ namespace Modelo
         public int AsesorId { get; set; }
         public string Observaciones { get; set; }
 
+       
+
         //[NotMapped]
         //public decimal TotalEnganche
         //{
@@ -42,16 +49,6 @@ namespace Modelo
         //        return ImportePago1 + ImportePago2 + ImportePago3 + ImportePago4 + ImportePago5;
         //    }
         //}
-
-
-        [NotMapped]
-        public decimal TotalEnganche
-        {
-            get
-            {
-                return ImportePago1 + ImportePago2 + ImportePago3 + ImportePago4 + ImportePago5;
-            }
-        }
 
         //[ForeignKey("PrototipoId")]
         //public virtual Prototipo Prototipo { get; set; }

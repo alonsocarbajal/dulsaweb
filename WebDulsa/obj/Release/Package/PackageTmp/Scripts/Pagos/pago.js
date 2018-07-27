@@ -35,8 +35,6 @@
             $('#excedente').html(dato.MtsExcedente ?'Si' : 'No');
             $('#mts-excedente').html(dato.MtsExcedente ? dato.MtsExcedente : 0);
 
-            
-
             var lote = $('#LoteId').val();
             var prototipo = $('#PrototipoId').val();
             var precioxm2 = 0;
@@ -104,20 +102,6 @@
         $('#ImportePago3').val($('#ImportePago3').maskMoney('unmasked')[0]);
         $('#ImportePago4').val($('#ImportePago4').maskMoney('unmasked')[0]);
         $('#ImportePago5').val($('#ImportePago5').maskMoney('unmasked')[0]);
-        //var prototipo = $('#PrototipoId').val();
-        //if (prototipo == '')
-        //    return false;
-        //var serviceURL = 'GetPrototipoId?descripcion=' + prototipo;
-        //$.ajax({
-        //    type: "Get",
-        //    url: serviceURL,
-        //    data: param = "",
-        //    contentType: "application/json; charset=utf-8",
-        //    dataType: "json",
-        //}).done((data) => {
-        //    $('#PrototipoId').val(data.Id);
-        //    console.log(event.target.submit());
-        //    });
-        //event.preventDefault();
     });
+    
 });

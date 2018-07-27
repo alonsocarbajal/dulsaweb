@@ -138,20 +138,25 @@ namespace WebDulsa.Controllers
         // GET: Pagoes/Edit/5
         public ActionResult Edit(int? id)
         {
-            id =id?? 0;
-            Pago pago = db.Pagos.Find(id);
-            if (pago == null)
+            id = id ?? 0;
+            CambioLote cambio = db.CambiosLote.Find(id);
+            if (cambio == null)
             {
-                pago = new Pago();
+                cambio = new CambioLote();
             }
-            ViewBag.AsesorId = new SelectList(db.Asesores, "Id", "Nombre", pago.AsesorId);
-            ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nombre", pago.ClienteId);
-            ViewBag.LoteId = new SelectList(db.Lotes, "Id", "Descripcion", pago.LoteId);
-            ViewBag.PrototipoId = new SelectList(db.Prototipos, "Id", "Descripcion", pago.PrototipoId);
-            ViewBag.MiBanco = ObtenerBanco();
-            ViewBag.MiCredito = ObtenerCredito();
+            var lotes = db.Pagos.Where(p => p.Cambios).Select(x => new
+            {
+                x.Id,
+                x.Lote
+            }).ToList();
+            //ViewBag.AsesorId = new SelectList(db.Asesores, "Id", "Nombre", pago.AsesorId);
+            //ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nombre", pago.ClienteId);
+            ViewBag.PagoId = new SelectList(lotes, "Id", "Lote.Descripcion", cambio.PagoId);
+            //ViewBag.PrototipoId = new SelectList(db.Prototipos, "Id", "Descripcion", pago.PrototipoId);
+            //ViewBag.MiBanco = ObtenerBanco();
+            //ViewBag.MiCredito = ObtenerCredito();
 
-            return View(pago);
+            return View(cambio);
         }
 
         // POST: Pagoes/Edit/5
@@ -301,6 +306,17 @@ namespace WebDulsa.Controllers
                     Value="OTRO"
                 }
             };
+        }
+
+        [HttpGet]
+        public JsonResult GetCliente(int PagoId)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var cliente = db.Pagos.Where(p => p.Id.Equals(PagoId)).Include(x => x.Cliente);
+            if (cliente == null)
+                return Json("No Existe");
+            else
+                return Json(cliente, JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -12,7 +12,7 @@
                 <div class="wrap-input100 validate-input m-b-26" data-validate="nombre usuario es requerido">
                     @*@Html.ValidationMessageFor(m => m.Email, "", new { @class = "input100", placeholder= "Enter username" name = "username" })*@
                     <span class="label-input100">Username</span>
-                    @Html.TextBoxFor(m => m.Email, new { @class = "input100", placeholder = "Escriba nombre usuario", name = "username" })
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "input100", placeholder = "Escriba nombre usuario", name = "username" })
                     @*<input class="input100" type="text" name="username" placeholder="Enter username">*@
                     <span class="focus-input100"></span>
                 </div>
